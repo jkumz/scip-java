@@ -1,6 +1,8 @@
   package minimized;
   
 //⌄ enclosing_range_start semanticdb maven . . minimized/SubClasses#
+//⌄ enclosing_range_start semanticdb maven . . minimized/AbstractClasses#
+//⌄ enclosing_range_start semanticdb maven . . minimized/Interfaces#
   public class SubClasses extends AbstractClasses implements Interfaces {
 //             ^^^^^^^^^^ definition semanticdb maven . . minimized/SubClasses#
 //                        display_name SubClasses
@@ -15,9 +17,12 @@
 //                                ^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/AbstractClasses#
 //                                                           ^^^^^^^^^^ reference semanticdb maven . . minimized/Interfaces#
   
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/Override#
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/SubClasses#abstractImplementation().
     @Override
 //   ^^^^^^^^ reference semanticdb maven jdk 11 java/lang/Override#
+//          ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/Override#
     public String abstractImplementation() {
 //         ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
 //                ^^^^^^^^^^^^^^^^^^^^^^ definition semanticdb maven . . minimized/SubClasses#abstractImplementation().
@@ -27,11 +32,15 @@
 //                                       relationship is_reference is_implementation semanticdb maven . . minimized/AbstractClasses#abstractImplementation().
       return "abstract";
     }
+//  ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/SubClasses#abstractImplementation().
   
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/Override#
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/SubClasses#abstractInterfaceMethod().
     @Override
 //   ^^^^^^^^ reference semanticdb maven jdk 11 java/lang/Override#
+//          ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/Override#
     public String abstractInterfaceMethod() {
 //         ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
 //                ^^^^^^^^^^^^^^^^^^^^^^^ definition semanticdb maven . . minimized/SubClasses#abstractInterfaceMethod().
@@ -41,8 +50,10 @@
 //                                        relationship is_reference is_implementation semanticdb maven . . minimized/Interfaces#abstractInterfaceMethod().
       return "abstractInterface";
     }
+//  ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/SubClasses#abstractInterfaceMethod().
   
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/SubClasses#app().
     public static String app() {
 //                ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
@@ -50,7 +61,9 @@
 //                           display_name app
 //                           signature_documentation java public static String app()
 //                           kind StaticMethod
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/SubClasses#
 //    ⌄ enclosing_range_start local 0
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/SubClasses#`<init>`().
       SubClasses s = new SubClasses();
 //    ^^^^^^^^^^ reference semanticdb maven . . minimized/SubClasses#
 //               ^ definition local 0
@@ -59,20 +72,41 @@
 //                 enclosing_symbol semanticdb maven . . minimized/SubClasses#app().
 //                 kind Variable
 //                       ^^^^^^^^^^ reference semanticdb maven . . minimized/SubClasses#`<init>`().
+//                                   ⌃ enclosing_range_end semanticdb maven . . minimized/SubClasses#
 //                                   ⌃ enclosing_range_end local 0
+//                                   ⌃ enclosing_range_end semanticdb maven . . minimized/SubClasses#`<init>`().
+//           ⌄ enclosing_range_start local 0
+//           ⌄ enclosing_range_start semanticdb maven . . minimized/SubClasses#abstractImplementation().
       return s.abstractImplementation()
 //           ^ reference local 0
 //             ^^^^^^^^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/SubClasses#abstractImplementation().
+//                                  ⌃ enclosing_range_end local 0
+//                                    ⌃ enclosing_range_end semanticdb maven . . minimized/SubClasses#abstractImplementation().
+//          ⌄ enclosing_range_start local 0
+//          ⌄ enclosing_range_start semanticdb maven . . minimized/AbstractClasses#defaultImplementation().
           + s.defaultImplementation()
 //          ^ reference local 0
 //            ^^^^^^^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/AbstractClasses#defaultImplementation().
+//                                ⌃ enclosing_range_end local 0
+//                                  ⌃ enclosing_range_end semanticdb maven . . minimized/AbstractClasses#defaultImplementation().
+//          ⌄ enclosing_range_start local 0
+//          ⌄ enclosing_range_start semanticdb maven . . minimized/SubClasses#abstractInterfaceMethod().
           + s.abstractInterfaceMethod()
 //          ^ reference local 0
 //            ^^^^^^^^^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/SubClasses#abstractInterfaceMethod().
+//                                  ⌃ enclosing_range_end local 0
+//                                    ⌃ enclosing_range_end semanticdb maven . . minimized/SubClasses#abstractInterfaceMethod().
+//          ⌄ enclosing_range_start local 0
+//          ⌄ enclosing_range_start semanticdb maven . . minimized/Interfaces#defaultInterfaceMethod().
           + s.defaultInterfaceMethod();
 //          ^ reference local 0
 //            ^^^^^^^^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/Interfaces#defaultInterfaceMethod().
+//                                 ⌃ enclosing_range_end local 0
+//                                   ⌃ enclosing_range_end semanticdb maven . . minimized/Interfaces#defaultInterfaceMethod().
     }
+//  ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/SubClasses#app().
   }
 //⌃ enclosing_range_end semanticdb maven . . minimized/SubClasses#
+//⌃ enclosing_range_end semanticdb maven . . minimized/AbstractClasses#
+//⌃ enclosing_range_end semanticdb maven . . minimized/Interfaces#

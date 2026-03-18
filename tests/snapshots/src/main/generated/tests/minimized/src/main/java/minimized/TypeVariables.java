@@ -66,6 +66,8 @@
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#I#
   
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#CT#
+//  ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#C#
+//  ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#I#
     static class CT extends C implements I {
 //               ^^ definition semanticdb maven . . minimized/TypeVariables#CT#
 //                  display_name CT
@@ -89,9 +91,14 @@
 //                      ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#CT#mI().
     }
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#CT#
+//  ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#C#
+//  ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#I#
   
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#app().[T]
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#app().
+//                 ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#C#
+//                 ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#I#
+//                                           ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#app().[T]
 //                                           ⌄ enclosing_range_start local 0
     public static <T extends C & I> void app(T t) {
 //                 ^ definition semanticdb maven . . minimized/TypeVariables#app().[T]
@@ -109,19 +116,38 @@
 //                                               display_name t
 //                                               signature_documentation java T t
 //                                               enclosing_symbol semanticdb maven . . minimized/TypeVariables#app().
+//                               ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#C#
+//                               ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#I#
+//                                             ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#app().[T]
 //                                             ⌃ enclosing_range_end local 0
+//    ⌄ enclosing_range_start local 0
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#I#mI().
       t.mI();
 //    ^ reference local 0
 //      ^^ reference semanticdb maven . . minimized/TypeVariables#I#mI().
+//       ⌃ enclosing_range_end local 0
+//         ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#I#mI().
+//    ⌄ enclosing_range_start local 0
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#C#mCPublic().
       t.mCPublic();
 //    ^ reference local 0
 //      ^^^^^^^^ reference semanticdb maven . . minimized/TypeVariables#C#mCPublic().
+//             ⌃ enclosing_range_end local 0
+//               ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#C#mCPublic().
+//    ⌄ enclosing_range_start local 0
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#C#mCProtected().
       t.mCProtected();
 //    ^ reference local 0
 //      ^^^^^^^^^^^ reference semanticdb maven . . minimized/TypeVariables#C#mCProtected().
+//                ⌃ enclosing_range_end local 0
+//                  ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#C#mCProtected().
+//    ⌄ enclosing_range_start local 0
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#C#mCPackage().
       t.mCPackage();
 //    ^ reference local 0
 //      ^^^^^^^^^ reference semanticdb maven . . minimized/TypeVariables#C#mCPackage().
+//              ⌃ enclosing_range_end local 0
+//                ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#C#mCPackage().
     }
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#app().[T]
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#app().

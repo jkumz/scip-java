@@ -10,6 +10,7 @@
 //                    display_name <init>
 //                    signature_documentation java public Arrays()
 //                    kind Constructor
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Arrays#app().
     public static String app() {
 //                ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
@@ -25,6 +26,7 @@
 //            enclosing_symbol semanticdb maven . . minimized/Arrays#app().
 //            kind Variable
 //                       ⌃ enclosing_range_end local 0
+//    ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //    ⌄ enclosing_range_start local 1
       String[] b = {"1", "2", "3"};
 //    ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
@@ -33,6 +35,7 @@
 //               signature_documentation java String[] b
 //               enclosing_symbol semanticdb maven . . minimized/Arrays#app().
 //               kind Variable
+//           ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                                ⌃ enclosing_range_end local 1
 //    ⌄ enclosing_range_start local 2
       int[][] c = {{1}, {2}, {3}};
@@ -42,6 +45,7 @@
 //              enclosing_symbol semanticdb maven . . minimized/Arrays#app().
 //              kind Variable
 //                               ⌃ enclosing_range_end local 2
+//    ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //    ⌄ enclosing_range_start local 3
       String[][] d = {{"1"}, {"2"}, {"3"}};
 //    ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
@@ -50,13 +54,23 @@
 //                 signature_documentation java String[][] d
 //                 enclosing_symbol semanticdb maven . . minimized/Arrays#app().
 //                 kind Variable
+//             ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                                        ⌃ enclosing_range_end local 3
+//           ⌄ enclosing_range_start local 1
+//                  ⌄ enclosing_range_start local 0
+//                         ⌄ enclosing_range_start local 2
+//                                   ⌄ enclosing_range_start local 3
       return b[0] + a[0] + c[1][0] + d[1][0];
 //           ^ reference local 1
 //                  ^ reference local 0
 //                         ^ reference local 2
 //                                   ^ reference local 3
+//              ⌃ enclosing_range_end local 1
+//                     ⌃ enclosing_range_end local 0
+//                            ⌃ enclosing_range_end local 2
+//                                      ⌃ enclosing_range_end local 3
     }
+//  ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/Arrays#app().
   }
 //⌃ enclosing_range_end semanticdb maven . . minimized/Arrays#

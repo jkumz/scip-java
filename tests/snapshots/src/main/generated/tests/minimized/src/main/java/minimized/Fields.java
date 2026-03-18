@@ -64,6 +64,7 @@
 //                           signature_documentation java public InnerFields()
 //                           kind Constructor
 //    ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#InnerFields#publicInnerField.
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#publicField.
       public int publicInnerField = publicField;
 //               ^^^^^^^^^^^^^^^^ definition semanticdb maven . . minimized/Fields#InnerFields#publicInnerField.
 //                                display_name publicInnerField
@@ -71,6 +72,7 @@
 //                                kind Field
 //                                  ^^^^^^^^^^^ reference semanticdb maven . . minimized/Fields#publicField.
 //                                             ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#InnerFields#publicInnerField.
+//                                             ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#publicField.
     }
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#InnerFields#
   
@@ -101,6 +103,7 @@
     }
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#InnerStaticFields#
   
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#app().
     public static String app() {
 //                ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
@@ -108,7 +111,9 @@
 //                           display_name app
 //                           signature_documentation java public static String app()
 //                           kind StaticMethod
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#
 //    ⌄ enclosing_range_start local 0
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#`<init>`().
       Fields fields = new Fields();
 //    ^^^^^^ reference semanticdb maven . . minimized/Fields#
 //           ^^^^^^ definition local 0
@@ -117,8 +122,13 @@
 //                  enclosing_symbol semanticdb maven . . minimized/Fields#app().
 //                  kind Variable
 //                        ^^^^^^ reference semanticdb maven . . minimized/Fields#`<init>`().
+//                                ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#
 //                                ⌃ enclosing_range_end local 0
+//                                ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#`<init>`().
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#InnerFields#
 //    ⌄ enclosing_range_start local 1
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#InnerFields#`<init>`().
+//                              ⌄ enclosing_range_start local 0
       InnerFields innerFields = fields.new InnerFields();
 //    ^^^^^^^^^^^ reference semanticdb maven . . minimized/Fields#InnerFields#
 //                ^^^^^^^^^^^ definition local 1
@@ -128,8 +138,13 @@
 //                            kind Variable
 //                              ^^^^^^ reference local 0
 //                                         ^^^^^^^^^^^ reference semanticdb maven . . minimized/Fields#InnerFields#`<init>`().
+//                                                     ⌃ enclosing_range_end local 0
+//                                                      ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#InnerFields#
 //                                                      ⌃ enclosing_range_end local 1
+//                                                      ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#InnerFields#`<init>`().
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#InnerStaticFields#
 //    ⌄ enclosing_range_start local 2
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#InnerStaticFields#`<init>`().
       InnerStaticFields innerStaticFields = new InnerStaticFields();
 //    ^^^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/Fields#InnerStaticFields#
 //                      ^^^^^^^^^^^^^^^^^ definition local 2
@@ -138,34 +153,71 @@
 //                                        enclosing_symbol semanticdb maven . . minimized/Fields#app().
 //                                        kind Variable
 //                                              ^^^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/Fields#InnerStaticFields#`<init>`().
+//                                                                 ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#InnerStaticFields#
 //                                                                 ⌃ enclosing_range_end local 2
+//                                                                 ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#InnerStaticFields#`<init>`().
+//           ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
+//           ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#valueOf(+5).
+//           ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#privateField.
+//           ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#protectedField.
+//           ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#publicField.
+//           ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#staticPrivateField.
+//           ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#staticProtectedFields.
+//           ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#staticPublicField.
+//           ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#InnerFields#publicInnerField.
+//           ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#InnerStaticFields#publicStaticInnerField.
+//           ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#InnerStaticFields#publicNonStaticInnerField.
+//                          ⌄ enclosing_range_start local 0
       return String.valueOf(fields.privateField)
 //           ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
 //                  ^^^^^^^ reference semanticdb maven jdk 11 java/lang/String#valueOf(+5).
 //                          ^^^^^^ reference local 0
 //                                 ^^^^^^^^^^^^ reference semanticdb maven . . minimized/Fields#privateField.
+//                        ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
+//                                            ⌃ enclosing_range_end local 0
+//                                             ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#valueOf(+5).
+//                                             ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#privateField.
+//          ⌄ enclosing_range_start local 0
           + fields.protectedField
 //          ^^^^^^ reference local 0
 //                 ^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/Fields#protectedField.
+//                              ⌃ enclosing_range_end local 0
+//                              ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#protectedField.
+//          ⌄ enclosing_range_start local 0
           + fields.publicField
 //          ^^^^^^ reference local 0
 //                 ^^^^^^^^^^^ reference semanticdb maven . . minimized/Fields#publicField.
+//                           ⌃ enclosing_range_end local 0
+//                           ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#publicField.
           + staticPrivateField
 //          ^^^^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/Fields#staticPrivateField.
+//                           ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#staticPrivateField.
           + staticProtectedFields
 //          ^^^^^^^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/Fields#staticProtectedFields.
+//                              ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#staticProtectedFields.
           + staticPublicField
 //          ^^^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/Fields#staticPublicField.
+//                          ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#staticPublicField.
+//          ⌄ enclosing_range_start local 1
           + innerFields.publicInnerField
 //          ^^^^^^^^^^^ reference local 1
 //                      ^^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/Fields#InnerFields#publicInnerField.
+//                                     ⌃ enclosing_range_end local 1
+//                                     ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#InnerFields#publicInnerField.
+//          ⌄ enclosing_range_start semanticdb maven . . minimized/Fields#InnerStaticFields#
           + InnerStaticFields.publicStaticInnerField
 //          ^^^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/Fields#InnerStaticFields#
 //                            ^^^^^^^^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/Fields#InnerStaticFields#publicStaticInnerField.
+//                                                 ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#InnerStaticFields#
+//                                                 ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#InnerStaticFields#publicStaticInnerField.
+//          ⌄ enclosing_range_start local 2
           + innerStaticFields.publicNonStaticInnerField;
 //          ^^^^^^^^^^^^^^^^^ reference local 2
 //                            ^^^^^^^^^^^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/Fields#InnerStaticFields#publicNonStaticInnerField.
+//                                                    ⌃ enclosing_range_end local 2
+//                                                    ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#InnerStaticFields#publicNonStaticInnerField.
     }
+//  ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/Fields#app().
   }
 //⌃ enclosing_range_end semanticdb maven . . minimized/Fields#

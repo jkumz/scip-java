@@ -58,11 +58,14 @@
 //                                          signature_documentation java int n
 //                                          enclosing_symbol semanticdb maven . . minimized/Docstrings#methodParameter().
 //                                        ⌃ enclosing_range_end local 0
+//           ⌄ enclosing_range_start local 0
       return n + 42;
 //           ^ reference local 0
+//                ⌃ enclosing_range_end local 0
     }
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/Docstrings#methodParameter().
   
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Docstrings#app().
     public static String app() {
 //                ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
@@ -70,13 +73,24 @@
 //                           display_name app
 //                           signature_documentation java public static String app()
 //                           kind StaticMethod
+//           ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
+//           ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#format().
+//           ⌄ enclosing_range_start semanticdb maven . . minimized/Docstrings#field.
+//                                          ⌄ enclosing_range_start semanticdb maven . . minimized/Docstrings#method().
+//                                                    ⌄ enclosing_range_start semanticdb maven . . minimized/Docstrings#methodParameter().
       return String.format("%s%s%s", field, method(), methodParameter(42));
 //           ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
 //                  ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#format().
 //                                   ^^^^^ reference semanticdb maven . . minimized/Docstrings#field.
 //                                          ^^^^^^ reference semanticdb maven . . minimized/Docstrings#method().
 //                                                    ^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/Docstrings#methodParameter().
+//                       ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
+//                                                 ⌃ enclosing_range_end semanticdb maven . . minimized/Docstrings#method().
+//                                                                      ⌃ enclosing_range_end semanticdb maven . . minimized/Docstrings#methodParameter().
+//                                                                       ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#format().
+//                                                                       ⌃ enclosing_range_end semanticdb maven . . minimized/Docstrings#field.
     }
+//  ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/Docstrings#app().
   }
 //⌃ enclosing_range_end semanticdb maven . . minimized/Docstrings#

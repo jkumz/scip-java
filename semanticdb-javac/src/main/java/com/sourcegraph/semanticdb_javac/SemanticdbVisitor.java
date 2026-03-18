@@ -19,6 +19,7 @@ import com.sun.source.tree.TypeCastTree;
 import com.sun.source.tree.TypeParameterTree;
 import com.sun.source.tree.ParameterizedTypeTree;
 import com.sun.source.tree.AnnotatedTypeTree;
+import com.sun.source.tree.ImportTree;
 
 import javax.tools.Diagnostic;
 import javax.lang.model.element.Element;
@@ -322,8 +323,9 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
           TreePath parentPath = treePath.getParentPath();
           Element parentSym = trees.getElement(parentPath);
           if (parentSym == null || parentSym.getKind() != null) {
+            Role role = isInsideImport(treePath) ? Role.IMPORT : Role.REFERENCE;
             emitSymbolOccurrence(
-                sym, node, sym.getSimpleName(), Role.REFERENCE, CompilerRange.FROM_START_TO_END);
+                sym, node, sym.getSimpleName(), role, CompilerRange.FROM_START_TO_END);
           }
         }
       }
@@ -341,9 +343,26 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
   private void resolveMemberSelectTree(MemberSelectTree node, TreePath treePath) {
     Element sym = trees.getElement(treePath);
     if (sym != null) {
+      Role role = isInsideImport(treePath) ? Role.IMPORT : Role.REFERENCE;
       emitSymbolOccurrence(
-          sym, node, sym.getSimpleName(), Role.REFERENCE, CompilerRange.FROM_END_TO_SYMBOL_NAME);
+          sym, node, sym.getSimpleName(), role, CompilerRange.FROM_END_TO_SYMBOL_NAME);
     }
+  }
+
+  /**
+   * Checks whether the given tree path is inside an import statement by walking
+   * up the ancestor chain looking for an ImportTree node.
+   *
+   * @param treePath - The tree path to check.
+   * @returns true if any ancestor is an ImportTree, false otherwise.
+   */
+  private boolean isInsideImport(TreePath treePath) {
+    TreePath current = treePath.getParentPath();
+    while (current != null) {
+      if (current.getLeaf() instanceof ImportTree) return true;
+      current = current.getParentPath();
+    }
+    return false;
   }
 
   private void resolveNewClassTree(NewClassTree node, TreePath treePath) {

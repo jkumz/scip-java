@@ -14,6 +14,7 @@
 //                                    kind StaticMethod
 //                                       ⌃ enclosing_range_end semanticdb maven . . minimized/Interfaces#staticInterfaceMethod().
   
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Interfaces#abstractInterfaceMethod().
     String abstractInterfaceMethod();
 //  ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
@@ -22,8 +23,10 @@
 //                                 signature_documentation java public abstract String abstractInterfaceMethod()
 //                                 kind AbstractMethod
 //                                 relationship is_reference is_implementation semanticdb maven . . minimized/SubClasses#abstractInterfaceMethod().
+//                                  ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                                  ⌃ enclosing_range_end semanticdb maven . . minimized/Interfaces#abstractInterfaceMethod().
   
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Interfaces#defaultInterfaceMethod().
     default String defaultInterfaceMethod() {
 //          ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
@@ -33,6 +36,7 @@
 //                                        kind Method
       return "default";
     }
+//  ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/Interfaces#defaultInterfaceMethod().
   }
 //⌃ enclosing_range_end semanticdb maven . . minimized/Interfaces#
@@ -59,6 +63,7 @@
 //                    display_name MyService
 //                    signature_documentation java interface MyService
 //                    kind Interface
+//  ⌄ enclosing_range_start semanticdb maven . . minimized/BookService#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/MyService#bookService().
     BookService bookService();
 //  ^^^^^^^^^^^ reference semanticdb maven . . minimized/BookService#
@@ -66,6 +71,7 @@
 //                          display_name bookService
 //                          signature_documentation java public abstract BookService bookService()
 //                          kind AbstractMethod
+//                           ⌃ enclosing_range_end semanticdb maven . . minimized/BookService#
 //                           ⌃ enclosing_range_end semanticdb maven . . minimized/MyService#bookService().
   
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/MyService#example().
@@ -74,9 +80,13 @@
 //                       display_name example
 //                       signature_documentation java public default void example()
 //                       kind Method
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/MyService#bookService().
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/BookService#checkPages().
       bookService().checkPages();
 //    ^^^^^^^^^^^ reference semanticdb maven . . minimized/MyService#bookService().
 //                  ^^^^^^^^^^ reference semanticdb maven . . minimized/BookService#checkPages().
+//                ⌃ enclosing_range_end semanticdb maven . . minimized/MyService#bookService().
+//                             ⌃ enclosing_range_end semanticdb maven . . minimized/BookService#checkPages().
     }
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/MyService#example().
   }

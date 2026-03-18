@@ -178,6 +178,10 @@ message SymbolOccurrence {
     // WE added SYNTHETIC_DEFINITION fix the following scip-java issue:
     // https://github.com/sourcegraph/scip-java/issues/399
     SYNTHETIC_DEFINITION = 3;
+    // NOTE: this role does not exist in the upstream SemanticDB spec.
+    // It is added to support SCIP's SymbolRole.Import bitflag.
+    // Marks occurrences within import statements.
+    IMPORT = 4;
   }
   Range range = 1;
   string symbol = 2;

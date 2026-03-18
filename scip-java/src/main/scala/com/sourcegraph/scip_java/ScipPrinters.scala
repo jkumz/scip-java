@@ -189,11 +189,15 @@ object ScipPrinters {
 
     val isDefinition =
       (occ.getSymbolRoles & SymbolRole.Definition.getNumber) > 0
+    val isImport =
+      (occ.getSymbolRoles & SymbolRole.Import.getNumber) > 0
     val role =
       if (syntheticDefinition.isDefined)
         "synthetic_definition"
       else if (isDefinition)
         "definition"
+      else if (isImport)
+        "import"
       else
         "reference"
     val indent =

@@ -166,6 +166,9 @@ public class ScipSemanticdb {
         if (isDefinitionRole(occ.getRole())) {
           role |= Scip.SymbolRole.Definition_VALUE;
         }
+        if (occ.getRole() == Role.IMPORT) {
+          role |= Scip.SymbolRole.Import_VALUE;
+        }
         boolean isSingleLineRange = occ.getRange().getStartLine() == occ.getRange().getEndLine();
         Iterable<Integer> range =
             isSingleLineRange

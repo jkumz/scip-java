@@ -1,16 +1,66 @@
   package minimized;
   
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//⌄ enclosing_range_start semanticdb maven . . java/lang/
+//⌄ enclosing_range_start semanticdb maven . . java/
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
+//⌄ enclosing_range_start semanticdb maven . . minimized/Hello#message.
+//⌄ enclosing_range_start local 0
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//⌄ enclosing_range_start semanticdb maven . . java/lang/
+//⌄ enclosing_range_start semanticdb maven . . java/
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#value().
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//⌄ enclosing_range_start semanticdb maven . . java/lang/
+//⌄ enclosing_range_start semanticdb maven . . java/
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#value().
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//⌄ enclosing_range_start semanticdb maven . . java/lang/
+//⌄ enclosing_range_start semanticdb maven . . java/
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//⌄ enclosing_range_start semanticdb maven . . java/lang/
+//⌄ enclosing_range_start semanticdb maven . . java/
+//⌄ enclosing_range_start semanticdb maven . . minimized/Hello#HelloBuilder#
+//⌄ enclosing_range_start semanticdb maven . . minimized/Hello#
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
+//⌄ enclosing_range_start semanticdb maven . . minimized/Hello#HelloBuilder#message.
+//⌄ enclosing_range_start local 1
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//⌄ enclosing_range_start semanticdb maven . . java/lang/
+//⌄ enclosing_range_start semanticdb maven . . java/
+//⌄ enclosing_range_start semanticdb maven . . minimized/Hello#HelloBuilder#message.
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/Override#
+//⌄ enclosing_range_start semanticdb maven . . java/lang/
+//⌄ enclosing_range_start semanticdb maven . . java/
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//⌄ enclosing_range_start semanticdb maven . . java/lang/
+//⌄ enclosing_range_start semanticdb maven . . java/
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
+//⌄ enclosing_range_start semanticdb maven . . java/lang/
+//⌄ enclosing_range_start semanticdb maven . . java/
+//⌄ enclosing_range_start semanticdb maven . . minimized/Hello#HelloBuilder#message.
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//⌄ enclosing_range_start semanticdb maven . . java/lang/
+//⌄ enclosing_range_start semanticdb maven . . java/
+//⌄ enclosing_range_start semanticdb maven . . minimized/Hello#HelloBuilder#
+//⌄ enclosing_range_start semanticdb maven . . minimized/Hello#
+//⌄ enclosing_range_start semanticdb maven . . minimized/Hello#
+//⌄ enclosing_range_start semanticdb maven . . lombok/Builder#
 //⌄ enclosing_range_start semanticdb maven . . minimized/Hello#HelloBuilder#build().
 //⌄ enclosing_range_start semanticdb maven . . minimized/Hello#builder().
 //⌄ enclosing_range_start semanticdb maven . . minimized/Hello#HelloBuilder#toString().
 //⌄ enclosing_range_start semanticdb maven . . minimized/Hello#HelloBuilder#
 //⌄ enclosing_range_start semanticdb maven . . minimized/Hello#HelloBuilder#`<init>`().
+//⌄ enclosing_range_start semanticdb maven . . minimized/Hello#HelloBuilder#`<init>`().
 //⌄ enclosing_range_start semanticdb maven . . minimized/Hello#
+//⌄ enclosing_range_start semanticdb maven . . minimized/Hello#`<init>`().
 //⌄ enclosing_range_start semanticdb maven . . minimized/Hello#`<init>`().
 //⌄ enclosing_range_start local 0
 //⌄ enclosing_range_start semanticdb maven . . minimized/Hello#HelloBuilder#message.
 //⌄ enclosing_range_start semanticdb maven . . minimized/Hello#HelloBuilder#message().
 //⌄ enclosing_range_start local 1
+// ⌄ enclosing_range_start semanticdb maven . . lombok/
   @lombok.Builder
 //^^^^^^^^^^^^^^^ reference local 0
 //^^^^^^^^^^^^^^^ reference local 1
@@ -82,11 +132,61 @@
 //                signature_documentation java @SuppressWarnings("all")\nHelloBuilder()
 //                kind Constructor
 //                reference semanticdb maven . . minimized/Hello#HelloBuilder#`<init>`(). 1:11
+//              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//              ⌃ enclosing_range_end semanticdb maven . . java/lang/
+//              ⌃ enclosing_range_end semanticdb maven . . java/
+//              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
+//              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#message.
+//              ⌃ enclosing_range_end local 0
+//              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//              ⌃ enclosing_range_end semanticdb maven . . java/lang/
+//              ⌃ enclosing_range_end semanticdb maven . . java/
+//              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#value().
+//              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//              ⌃ enclosing_range_end semanticdb maven . . java/lang/
+//              ⌃ enclosing_range_end semanticdb maven . . java/
+//              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#value().
+//              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
+//              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//              ⌃ enclosing_range_end semanticdb maven . . java/lang/
+//              ⌃ enclosing_range_end semanticdb maven . . java/
+//              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//              ⌃ enclosing_range_end semanticdb maven . . java/lang/
+//              ⌃ enclosing_range_end semanticdb maven . . java/
+//              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#HelloBuilder#
+//              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#
+//              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
+//              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#HelloBuilder#message.
+//              ⌃ enclosing_range_end local 1
+//              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//              ⌃ enclosing_range_end semanticdb maven . . java/lang/
+//              ⌃ enclosing_range_end semanticdb maven . . java/
+//              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#HelloBuilder#message.
+//              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/Override#
+//              ⌃ enclosing_range_end semanticdb maven . . java/lang/
+//              ⌃ enclosing_range_end semanticdb maven . . java/
+//              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//              ⌃ enclosing_range_end semanticdb maven . . java/lang/
+//              ⌃ enclosing_range_end semanticdb maven . . java/
+//              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
+//              ⌃ enclosing_range_end semanticdb maven . . java/lang/
+//              ⌃ enclosing_range_end semanticdb maven . . java/
+//              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#HelloBuilder#message.
+//              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//              ⌃ enclosing_range_end semanticdb maven . . java/lang/
+//              ⌃ enclosing_range_end semanticdb maven . . java/
+//              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#HelloBuilder#
+//              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#
+//              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#
+//              ⌃ enclosing_range_end semanticdb maven . . lombok/
+//              ⌃ enclosing_range_end semanticdb maven . . lombok/Builder#
 //              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#HelloBuilder#build().
 //              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#builder().
 //              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#HelloBuilder#toString().
 //              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#HelloBuilder#
 //              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#HelloBuilder#`<init>`().
+//              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#HelloBuilder#`<init>`().
+//              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#`<init>`().
 //              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#`<init>`().
 //              ⌃ enclosing_range_end local 0
 //              ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#HelloBuilder#message.
@@ -102,6 +202,7 @@
 //            signature_documentation java @SuppressWarnings("all")\nHello(String message)
 //            kind Constructor
 //      ^^^^^ reference semanticdb maven . . minimized/Hello#`<init>`().
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Hello#message.
     private String message;
 //          ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
@@ -126,6 +227,7 @@
 //                         display_name message
 //                         signature_documentation java private String message
 //                         kind Field
+//                        ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                        ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#message.
   }
 //⌃ enclosing_range_end semanticdb maven . . minimized/Hello#
