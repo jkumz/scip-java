@@ -24,7 +24,7 @@
 //  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Primitives#app().
     public static String app() {
-//                ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
+//                ^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/String#
 //                       ^^^ definition semanticdb maven . . minimized/Primitives#app().
 //                           display_name app
 //                           signature_documentation java public static String app()
@@ -33,7 +33,7 @@
 //    ⌄ enclosing_range_start local 0
 //    ⌄ enclosing_range_start semanticdb maven jdk 11 java/util/Random#`<init>`().
       Random random = new Random();
-//    ^^^^^^ reference semanticdb maven jdk 11 java/util/Random#
+//    ^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Random#
 //           ^^^^^^ definition local 0
 //                  display_name random
 //                  signature_documentation java Random random
@@ -52,8 +52,8 @@
 //           signature_documentation java byte a
 //           enclosing_symbol semanticdb maven . . minimized/Primitives#app().
 //           kind Variable
-//                    ^^^^^^ reference local 0
-//                           ^^^^^^^ reference semanticdb maven jdk 11 java/util/Random#nextInt().
+//                    ^^^^^^ reference read_access local 0
+//                           ^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Random#nextInt().
 //                                 ⌃ enclosing_range_end local 0
 //                                   ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Random#nextInt().
 //                                    ⌃ enclosing_range_end local 1
@@ -66,8 +66,8 @@
 //            signature_documentation java short b
 //            enclosing_symbol semanticdb maven . . minimized/Primitives#app().
 //            kind Variable
-//                      ^^^^^^ reference local 0
-//                             ^^^^^^^ reference semanticdb maven jdk 11 java/util/Random#nextInt().
+//                      ^^^^^^ reference read_access local 0
+//                             ^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Random#nextInt().
 //                                   ⌃ enclosing_range_end local 0
 //                                     ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Random#nextInt().
 //                                      ⌃ enclosing_range_end local 2
@@ -80,8 +80,8 @@
 //          signature_documentation java int c
 //          enclosing_symbol semanticdb maven . . minimized/Primitives#app().
 //          kind Variable
-//            ^^^^^^ reference local 0
-//                   ^^^^^^^ reference semanticdb maven jdk 11 java/util/Random#nextInt().
+//            ^^^^^^ reference read_access local 0
+//                   ^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Random#nextInt().
 //                         ⌃ enclosing_range_end local 0
 //                           ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Random#nextInt().
 //                            ⌃ enclosing_range_end local 3
@@ -94,8 +94,8 @@
 //           signature_documentation java long d
 //           enclosing_symbol semanticdb maven . . minimized/Primitives#app().
 //           kind Variable
-//             ^^^^^^ reference local 0
-//                    ^^^^^^^^ reference semanticdb maven jdk 11 java/util/Random#nextLong().
+//             ^^^^^^ reference read_access local 0
+//                    ^^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Random#nextLong().
 //                           ⌃ enclosing_range_end local 0
 //                             ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Random#nextLong().
 //                              ⌃ enclosing_range_end local 4
@@ -108,8 +108,8 @@
 //           signature_documentation java char e
 //           enclosing_symbol semanticdb maven . . minimized/Primitives#app().
 //           kind Variable
-//                    ^^^^^^ reference local 0
-//                           ^^^^^^^ reference semanticdb maven jdk 11 java/util/Random#nextInt().
+//                    ^^^^^^ reference read_access local 0
+//                           ^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Random#nextInt().
 //                                 ⌃ enclosing_range_end local 0
 //                                   ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Random#nextInt().
 //                                    ⌃ enclosing_range_end local 5
@@ -122,8 +122,8 @@
 //            signature_documentation java float f
 //            enclosing_symbol semanticdb maven . . minimized/Primitives#app().
 //            kind Variable
-//                      ^^^^^^ reference local 0
-//                             ^^^^^^^^^^ reference semanticdb maven jdk 11 java/util/Random#nextDouble().
+//                      ^^^^^^ reference read_access local 0
+//                             ^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Random#nextDouble().
 //                                      ⌃ enclosing_range_end local 0
 //                                        ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Random#nextDouble().
 //                                         ⌃ enclosing_range_end local 6
@@ -136,8 +136,8 @@
 //             signature_documentation java double g
 //             enclosing_symbol semanticdb maven . . minimized/Primitives#app().
 //             kind Variable
-//                        ^^^^^^ reference local 0
-//                               ^^^^^^^^^^ reference semanticdb maven jdk 11 java/util/Random#nextDouble().
+//                        ^^^^^^ reference read_access local 0
+//                               ^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Random#nextDouble().
 //                                        ⌃ enclosing_range_end local 0
 //                                          ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Random#nextDouble().
 //                                           ⌃ enclosing_range_end local 7
@@ -150,8 +150,8 @@
 //              signature_documentation java boolean h
 //              enclosing_symbol semanticdb maven . . minimized/Primitives#app().
 //              kind Variable
-//                ^^^^^^ reference local 0
-//                       ^^^^^^^^^^^ reference semanticdb maven jdk 11 java/util/Random#nextBoolean().
+//                ^^^^^^ reference read_access local 0
+//                       ^^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Random#nextBoolean().
 //                                 ⌃ enclosing_range_end local 0
 //                                   ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Random#nextBoolean().
 //                                    ⌃ enclosing_range_end local 8
@@ -164,14 +164,14 @@
 //           ⌄ enclosing_range_start local 7
 //           ⌄ enclosing_range_start local 8
       return "" + a + b + c + d + e + f + g + h;
-//                ^ reference local 1
-//                    ^ reference local 2
-//                        ^ reference local 3
-//                            ^ reference local 4
-//                                ^ reference local 5
-//                                    ^ reference local 6
-//                                        ^ reference local 7
-//                                            ^ reference local 8
+//                ^ reference read_access local 1
+//                    ^ reference read_access local 2
+//                        ^ reference read_access local 3
+//                            ^ reference read_access local 4
+//                                ^ reference read_access local 5
+//                                    ^ reference read_access local 6
+//                                        ^ reference read_access local 7
+//                                            ^ reference read_access local 8
 //                ⌃ enclosing_range_end local 1
 //                    ⌃ enclosing_range_end local 2
 //                        ⌃ enclosing_range_end local 3

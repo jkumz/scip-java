@@ -24,7 +24,7 @@
 //⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#
 //⌄ enclosing_range_start semanticdb maven . . minimized/RawTypes#
   @SuppressWarnings("ALL")
-// ^^^^^^^^^^^^^^^ reference semanticdb maven jdk 11 java/lang/SuppressWarnings#
+// ^^^^^^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/SuppressWarnings#
 //                       ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#
   public class RawTypes {
 //             ^^^^^^^^ definition semanticdb maven . . minimized/RawTypes#
@@ -40,13 +40,13 @@
 //                               ⌄ enclosing_range_start semanticdb maven jdk 11 java/util/Collections#
 //                               ⌄ enclosing_range_start semanticdb maven jdk 11 java/util/Collections#singletonList().
     public static final List x = Collections.singletonList(42);
-//                      ^^^^ reference semanticdb maven jdk 11 java/util/List#
+//                      ^^^^ reference read_access semanticdb maven jdk 11 java/util/List#
 //                           ^ definition semanticdb maven . . minimized/RawTypes#x.
 //                             display_name x
 //                             signature_documentation java public static final List x
 //                             kind StaticField
-//                               ^^^^^^^^^^^ reference semanticdb maven jdk 11 java/util/Collections#
-//                                           ^^^^^^^^^^^^^ reference semanticdb maven jdk 11 java/util/Collections#singletonList().
+//                               ^^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Collections#
+//                                           ^^^^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Collections#singletonList().
 //                                                       ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Collections#
 //                                                           ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Collections#singletonList().
 //                                                            ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/List#

@@ -191,7 +191,11 @@ object ScipPrinters {
       (occ.getSymbolRoles & SymbolRole.Definition.getNumber) > 0
     val isImport =
       (occ.getSymbolRoles & SymbolRole.Import.getNumber) > 0
-    val role =
+    val isWriteAccess =
+      (occ.getSymbolRoles & SymbolRole.WriteAccess.getNumber) > 0
+    val isReadAccess =
+      (occ.getSymbolRoles & SymbolRole.ReadAccess.getNumber) > 0
+    val baseRole =
       if (syntheticDefinition.isDefined)
         "synthetic_definition"
       else if (isDefinition)
@@ -200,6 +204,13 @@ object ScipPrinters {
         "import"
       else
         "reference"
+    val accessSuffix = List(
+      if (isWriteAccess) Some("write_access") else None,
+      if (isReadAccess) Some("read_access") else None
+    ).flatten.mkString(" ", " ", "")
+    val role =
+      if (accessSuffix.trim.isEmpty) baseRole
+      else baseRole + accessSuffix
     val indent =
       if (pos.startColumn + sourceIndent.length > comment.length)
         " " * (pos.startColumn + sourceIndent.length - comment.length)

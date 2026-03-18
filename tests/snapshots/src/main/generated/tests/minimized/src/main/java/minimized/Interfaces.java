@@ -17,7 +17,7 @@
 //  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Interfaces#abstractInterfaceMethod().
     String abstractInterfaceMethod();
-//  ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
+//  ^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/String#
 //         ^^^^^^^^^^^^^^^^^^^^^^^ definition semanticdb maven . . minimized/Interfaces#abstractInterfaceMethod().
 //                                 display_name abstractInterfaceMethod
 //                                 signature_documentation java public abstract String abstractInterfaceMethod()
@@ -29,7 +29,7 @@
 //  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Interfaces#defaultInterfaceMethod().
     default String defaultInterfaceMethod() {
-//          ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
+//          ^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/String#
 //                 ^^^^^^^^^^^^^^^^^^^^^^ definition semanticdb maven . . minimized/Interfaces#defaultInterfaceMethod().
 //                                        display_name defaultInterfaceMethod
 //                                        signature_documentation java public default String defaultInterfaceMethod()
@@ -66,7 +66,7 @@
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/BookService#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/MyService#bookService().
     BookService bookService();
-//  ^^^^^^^^^^^ reference semanticdb maven . . minimized/BookService#
+//  ^^^^^^^^^^^ reference read_access semanticdb maven . . minimized/BookService#
 //              ^^^^^^^^^^^ definition semanticdb maven . . minimized/MyService#bookService().
 //                          display_name bookService
 //                          signature_documentation java public abstract BookService bookService()
@@ -83,8 +83,8 @@
 //    ⌄ enclosing_range_start semanticdb maven . . minimized/MyService#bookService().
 //    ⌄ enclosing_range_start semanticdb maven . . minimized/BookService#checkPages().
       bookService().checkPages();
-//    ^^^^^^^^^^^ reference semanticdb maven . . minimized/MyService#bookService().
-//                  ^^^^^^^^^^ reference semanticdb maven . . minimized/BookService#checkPages().
+//    ^^^^^^^^^^^ reference read_access semanticdb maven . . minimized/MyService#bookService().
+//                  ^^^^^^^^^^ reference read_access semanticdb maven . . minimized/BookService#checkPages().
 //                ⌃ enclosing_range_end semanticdb maven . . minimized/MyService#bookService().
 //                             ⌃ enclosing_range_end semanticdb maven . . minimized/BookService#checkPages().
     }

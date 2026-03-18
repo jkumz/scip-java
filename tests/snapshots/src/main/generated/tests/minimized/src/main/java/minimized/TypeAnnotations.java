@@ -32,9 +32,9 @@
 //        ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/annotation/ElementType#TYPE_USE.
 //          ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/annotation/ElementType#
   @Target({ ElementType.TYPE_USE })
-// ^^^^^ reference semanticdb maven jdk 11 java/lang/annotation/Target#
-//          ^^^^^^^^^^^ reference semanticdb maven jdk 11 java/lang/annotation/ElementType#
-//                      ^^^^^^^^ reference semanticdb maven jdk 11 java/lang/annotation/ElementType#TYPE_USE.
+// ^^^^^ reference read_access semanticdb maven jdk 11 java/lang/annotation/Target#
+//          ^^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/annotation/ElementType#
+//                      ^^^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/annotation/ElementType#TYPE_USE.
 //                             ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/annotation/ElementType#
 //                               ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/annotation/ElementType#TYPE_USE.
 //                                ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/annotation/Target#
@@ -68,8 +68,8 @@
 //                                                      display_name T
 //                                                      signature_documentation java T extends Number
 //                                                      kind TypeParameter
-//                      ^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/TypeAnnotation#
-//                                               ^^^^^^ reference semanticdb maven jdk 11 java/lang/Number#
+//                      ^^^^^^^^^^^^^^ reference read_access semanticdb maven . . minimized/TypeAnnotation#
+//                                               ^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/Number#
 //                                   ⌃ enclosing_range_end semanticdb maven . . minimized/TypeAnnotation#
 //                                                    ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/Number#
   
@@ -85,14 +85,14 @@
 //                       ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#`<init>`().
 //                       ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
           String s = new @TypeAnnotation String();
-//        ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
+//        ^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/String#
 //               ^ definition local 0
 //                 display_name s
 //                 signature_documentation java String s
 //                 enclosing_symbol semanticdb maven . . minimized/ClassProcessed#`<init>`().
 //                 kind Variable
-//                        ^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/TypeAnnotation#
-//                                       ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
+//                        ^^^^^^^^^^^^^^ reference read_access semanticdb maven . . minimized/TypeAnnotation#
+//                                       ^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/String#
 //                                       ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#`<init>`().
 //                                     ⌃ enclosing_range_end semanticdb maven . . minimized/TypeAnnotation#
 //                                            ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#`<init>`().

@@ -190,6 +190,10 @@ message SymbolOccurrence {
   // It is added to support SCIP's enclosing_range field.
   // This is the range of the nearest non-trivial enclosing AST node.
   optional Range enclosing_range = 4;
+  // NOTE: this field does not exist in the upstream SemanticDB spec.
+  // Bitfield for additional SCIP SymbolRoles (e.g. WriteAccess=0x4, ReadAccess=0x8).
+  // Uses the same bit layout as SCIP's SymbolRole enum.
+  int32 symbol_roles = 5;
 }
 
 message Scope {

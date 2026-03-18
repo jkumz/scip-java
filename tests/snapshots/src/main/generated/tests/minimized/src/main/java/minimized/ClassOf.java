@@ -13,7 +13,7 @@
 //  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/ClassOf#app().
     public static String app() {
-//                ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
+//                ^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/String#
 //                       ^^^ definition semanticdb maven . . minimized/ClassOf#app().
 //                           display_name app
 //                           signature_documentation java public static String app()
@@ -22,9 +22,9 @@
 //           ⌄ enclosing_range_start semanticdb maven . . minimized/ClassOf#class.
 //           ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/Class#getName().
       return ClassOf.class.getName();
-//           ^^^^^^^ reference semanticdb maven . . minimized/ClassOf#
-//                   ^^^^^ reference semanticdb maven . . minimized/ClassOf#class.
-//                         ^^^^^^^ reference semanticdb maven jdk 11 java/lang/Class#getName().
+//           ^^^^^^^ reference read_access semanticdb maven . . minimized/ClassOf#
+//                   ^^^^^ reference read_access semanticdb maven . . minimized/ClassOf#class.
+//                         ^^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/Class#getName().
 //                       ⌃ enclosing_range_end semanticdb maven . . minimized/ClassOf#
 //                               ⌃ enclosing_range_end semanticdb maven . . minimized/ClassOf#class.
 //                                 ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/Class#getName().
