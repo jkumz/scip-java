@@ -116,7 +116,7 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
       emitSymbolInformation(sym, tree);
       return range;
     }
-    emitSymbolOccurrence(sym, range, role, Optional.empty());
+    emitSymbolOccurrence(sym, range, role, computeEnclosingRange(tree));
     return range;
   }
 
