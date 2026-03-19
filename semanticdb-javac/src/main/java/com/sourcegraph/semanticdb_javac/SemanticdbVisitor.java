@@ -33,6 +33,7 @@ import javax.lang.model.element.TypeElement;
 import javax.lang.model.element.ExecutableElement;
 import javax.lang.model.type.NoType;
 import javax.lang.model.type.TypeMirror;
+import javax.lang.model.type.TypeKind;
 import javax.lang.model.type.DeclaredType;
 import javax.lang.model.util.Types;
 import javax.lang.model.util.Elements;
@@ -51,6 +52,7 @@ import java.util.Set;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Iterator;
+import java.util.Collections;
 import java.security.NoSuchAlgorithmException;
 import java.util.stream.Collectors;
 
@@ -200,6 +202,11 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
       case LOCAL_VARIABLE:
         builder.setKind(Kind.LOCAL);
         break;
+    }
+
+    List<String> typeDefSymbols = computeTypeDefinitionSymbols(sym);
+    if (!typeDefSymbols.isEmpty()) {
+      builder.addAllTypeDefinitionSymbols(typeDefSymbols);
     }
 
     Semanticdb.SymbolInformation info = builder.build();
@@ -417,6 +424,47 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
       }
     }
     return SCIP_READ_ACCESS;
+  }
+
+  /**
+   * Computes the type definition symbol(s) for a given element by inspecting
+   * its declared type. For fields, local variables, and parameters, this is the
+   * variable's declared type. For methods, this is the return type.
+   *
+   * Primitives and void types are excluded since they have no type definition symbol.
+   *
+   * @param sym - The element to extract type definition symbols from.
+   * @returns A list of SemanticDB symbol strings for the type definition, or empty.
+   */
+  private List<String> computeTypeDefinitionSymbols(Element sym) {
+    TypeMirror typeMirror;
+    switch (sym.getKind()) {
+      case FIELD:
+      case LOCAL_VARIABLE:
+      case PARAMETER:
+      case EXCEPTION_PARAMETER:
+      case ENUM_CONSTANT:
+        typeMirror = sym.asType();
+        break;
+      case METHOD:
+        typeMirror = ((ExecutableElement) sym).getReturnType();
+        break;
+      default:
+        return Collections.emptyList();
+    }
+    if (typeMirror == null
+        || typeMirror.getKind().isPrimitive()
+        || typeMirror.getKind() == TypeKind.VOID
+        || typeMirror.getKind() == TypeKind.NONE) {
+      return Collections.emptyList();
+    }
+    Element typeElement = types.asElement(typeMirror);
+    if (typeElement == null) return Collections.emptyList();
+    String typeSymbol = semanticdbSymbol(typeElement);
+    if (typeSymbol == null || typeSymbol.equals(SemanticdbSymbols.NONE)) {
+      return Collections.emptyList();
+    }
+    return Collections.singletonList(typeSymbol);
   }
 
   private void resolveNewClassTree(NewClassTree node, TreePath treePath) {

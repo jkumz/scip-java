@@ -132,6 +132,12 @@ message SymbolInformation {
   // -- OUT OF SPEC -- //
   repeated string definition_relationships = 21;
   // -- OUT OF SPEC -- //
+
+  // -- OUT OF SPEC -- //
+  // Symbols for the type definition(s) of this symbol.
+  // Used to emit SCIP Relationship.is_type_definition.
+  repeated string type_definition_symbols = 22;
+  // -- OUT OF SPEC -- //
 }
 
 message Access {

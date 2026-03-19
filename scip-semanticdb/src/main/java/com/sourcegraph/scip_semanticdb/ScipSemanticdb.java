@@ -280,6 +280,19 @@ public class ScipSemanticdb {
                   .setIsImplementation(true)
                   .setIsReference(supportsReferenceRelationship(info)));
         }
+
+        for (int i = 0; i < info.getTypeDefinitionSymbolsCount(); i++) {
+          String typeDefSymbol = info.getTypeDefinitionSymbols(i);
+          if (typeDefSymbol.isEmpty()) {
+            continue;
+          }
+          Package typeDefPkg =
+              packages.packageForSymbol(typeDefSymbol).orElse(Package.EMPTY);
+          scipInfo.addRelationships(
+              Scip.Relationship.newBuilder()
+                  .setSymbol(typedSymbol(typeDefSymbol, typeDefPkg))
+                  .setIsTypeDefinition(true));
+        }
         if (info.hasSignature()) {
           String language =
               doc.semanticdb.getLanguage().toString().toLowerCase(Locale.ROOT).intern();
