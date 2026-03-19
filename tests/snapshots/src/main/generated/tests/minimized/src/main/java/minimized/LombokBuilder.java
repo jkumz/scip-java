@@ -114,15 +114,18 @@
 //                display_name build
 //                signature_documentation java @SuppressWarnings("all")\npublic Hello build()
 //                kind Method
+//                relationship is_type_definition semanticdb maven . . minimized/Hello#
 //                definition semanticdb maven . . minimized/Hello#builder(). 1:6
 //                display_name builder
 //                signature_documentation java @SuppressWarnings("all")\npublic static HelloBuilder builder()
 //                kind StaticMethod
+//                relationship is_type_definition semanticdb maven . . minimized/Hello#HelloBuilder#
 //                definition semanticdb maven . . minimized/Hello#HelloBuilder#toString(). 1:7
 //                display_name toString
 //                signature_documentation java @Override\n@SuppressWarnings("all")\npublic String toString()
 //                kind Method
 //                relationship is_reference is_implementation semanticdb maven jdk 11 java/lang/Object#toString().
+//                relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                definition semanticdb maven . . minimized/Hello#HelloBuilder# 1:11
 //                display_name HelloBuilder
 //                signature_documentation java @SuppressWarnings("all")\npublic static class HelloBuilder
@@ -210,23 +213,28 @@
 //                         display_name message
 //                         signature_documentation java final String message
 //                         enclosing_symbol semanticdb maven . . minimized/Hello#`<init>`().
+//                         relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                 ^^^^^^^ definition local 1
 //                         display_name message
 //                         signature_documentation java final String message
 //                         enclosing_symbol semanticdb maven . . minimized/Hello#HelloBuilder#message().
+//                         relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                 ^^^^^^^ definition semanticdb maven . . minimized/Hello#HelloBuilder#message().
 //                         display_name message
 //                         signature_documentation java @SuppressWarnings("all")\npublic HelloBuilder message(String message)
 //                         kind Method
 //                         documentation @return {@code this}.
+//                         relationship is_type_definition semanticdb maven . . minimized/Hello#HelloBuilder#
 //                 ^^^^^^^ definition semanticdb maven . . minimized/Hello#HelloBuilder#message.
 //                         display_name message
 //                         signature_documentation java @SuppressWarnings("all")\nprivate String message
 //                         kind Field
+//                         relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                 ^^^^^^^ definition semanticdb maven . . minimized/Hello#message.
 //                         display_name message
 //                         signature_documentation java private String message
 //                         kind Field
+//                         relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                        ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                        ⌃ enclosing_range_end semanticdb maven . . minimized/Hello#message.
   }

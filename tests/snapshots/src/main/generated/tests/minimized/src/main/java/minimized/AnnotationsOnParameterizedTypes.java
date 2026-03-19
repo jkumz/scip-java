@@ -81,6 +81,7 @@
 //                                                            display_name getInstance
 //                                                            signature_documentation java public static AnnotationsOnParameterizedTypes getInstance()
 //                                                            kind StaticMethod
+//                                                            relationship is_type_definition semanticdb maven . . minimized/AnnotationsOnParameterizedTypes#
 //    ⌄ enclosing_range_start semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#`<init>`().
       return new AnnotationsOnParameterizedTypesImpl();
 //               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ reference semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#`<init>`().
@@ -118,18 +119,21 @@
 //                                signature_documentation java public abstract <C, W> Function<W, C> adapter(Class<C> contract, Class<W> wrappedClass)
 //                                kind AbstractMethod
 //                                relationship is_reference is_implementation semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#adapter().
+//                                relationship is_type_definition semanticdb maven jdk 11 java/util/function/Function#
 //                                ^^^^^ reference read_access semanticdb maven jdk 11 java/lang/Class#
 //                                      ^ reference read_access semanticdb maven . . minimized/AnnotationsOnParameterizedTypes#adapter().[C]
 //                                         ^^^^^^^^ definition local 0
 //                                                  display_name contract
 //                                                  signature_documentation java Class<C> contract
 //                                                  enclosing_symbol semanticdb maven . . minimized/AnnotationsOnParameterizedTypes#adapter().
+//                                                  relationship is_type_definition semanticdb maven jdk 11 java/lang/Class#
 //                                                   ^^^^^ reference read_access semanticdb maven jdk 11 java/lang/Class#
 //                                                         ^ reference read_access semanticdb maven . . minimized/AnnotationsOnParameterizedTypes#adapter().[W]
 //                                                            ^^^^^^^^^^^^ definition local 1
 //                                                                         display_name wrappedClass
 //                                                                         signature_documentation java Class<W> wrappedClass
 //                                                                         enclosing_symbol semanticdb maven . . minimized/AnnotationsOnParameterizedTypes#adapter().
+//                                                                         relationship is_type_definition semanticdb maven jdk 11 java/lang/Class#
 //                      ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/function/Function#
 //                      ⌃ enclosing_range_end semanticdb maven . . minimized/AnnotationsOnParameterizedTypes#adapter().[W]
 //                      ⌃ enclosing_range_end semanticdb maven . . minimized/AnnotationsOnParameterizedTypes#adapter().[C]
@@ -172,6 +176,7 @@
 //                                                                    display_name proxyConstructors
 //                                                                    signature_documentation java private ConcurrentMap<Class<?>, Constructor<?>> proxyConstructors
 //                                                                    kind Field
+//                                                                    relationship is_type_definition semanticdb maven jdk 11 java/util/concurrent/ConcurrentMap#
 //                                                                          ^^^^^^^^^^^^^^^^^ reference semanticdb maven jdk 11 java/util/concurrent/ConcurrentHashMap#`<init>`().
 //                               ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/Class#
 //                                               ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/reflect/Constructor#
@@ -212,18 +217,21 @@
 //                                       signature_documentation java @Override\npublic <C, W> Function<W, C> adapter(Class<C> contract, Class<W> wrappedClass)
 //                                       kind Method
 //                                       relationship is_reference is_implementation semanticdb maven . . minimized/AnnotationsOnParameterizedTypes#adapter().
+//                                       relationship is_type_definition semanticdb maven jdk 11 java/util/function/Function#
 //                                       ^^^^^ reference read_access semanticdb maven jdk 11 java/lang/Class#
 //                                             ^ reference read_access semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#adapter().[C]
 //                                                ^^^^^^^^ definition local 2
 //                                                         display_name contract
 //                                                         signature_documentation java Class<C> contract
 //                                                         enclosing_symbol semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#adapter().
+//                                                         relationship is_type_definition semanticdb maven jdk 11 java/lang/Class#
 //                                                          ^^^^^ reference read_access semanticdb maven jdk 11 java/lang/Class#
 //                                                                ^ reference read_access semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#adapter().[W]
 //                                                                   ^^^^^^^^^^^^ definition local 3
 //                                                                                display_name wrappedClass
 //                                                                                signature_documentation java Class<W> wrappedClass
 //                                                                                enclosing_symbol semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#adapter().
+//                                                                                relationship is_type_definition semanticdb maven jdk 11 java/lang/Class#
 //                             ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/function/Function#
 //                             ⌃ enclosing_range_end semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#adapter().[W]
 //                             ⌃ enclosing_range_end semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#adapter().[C]
@@ -249,6 +257,7 @@
 //                                               signature_documentation java Function<InvocationHandler, C> constructor
 //                                               enclosing_symbol semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#adapter().
 //                                               kind Variable
+//                                               relationship is_type_definition semanticdb maven jdk 11 java/util/function/Function#
 //                                                 ^^^^^^^^^^^^^^ reference read_access semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#getConstructor().
 //                                                                ^^^^^^^^ reference read_access local 2
 //                                 ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/function/Function#
@@ -298,12 +307,14 @@
 //                                                            display_name getConstructor
 //                                                            signature_documentation java private <T> Function<InvocationHandler, T> getConstructor(Class<T> contract)
 //                                                            kind Method
+//                                                            relationship is_type_definition semanticdb maven jdk 11 java/util/function/Function#
 //                                                            ^^^^^ reference read_access semanticdb maven jdk 11 java/lang/Class#
 //                                                                  ^ reference read_access semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#getConstructor().[T]
 //                                                                     ^^^^^^^^ definition local 5
 //                                                                              display_name contract
 //                                                                              signature_documentation java Class<T> contract
 //                                                                              enclosing_symbol semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#getConstructor().
+//                                                                              relationship is_type_definition semanticdb maven jdk 11 java/lang/Class#
 //                                           ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/function/Function#
 //                                           ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/reflect/InvocationHandler#
 //                                           ⌃ enclosing_range_end semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#getConstructor().[T]
@@ -331,6 +342,7 @@
 //                               signature_documentation java @SuppressWarnings\nConstructor<T> constructor
 //                               enclosing_symbol semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#getConstructor().
 //                               kind Variable
+//                               relationship is_type_definition semanticdb maven jdk 11 java/lang/reflect/Constructor#
 //                                  ^^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/reflect/Constructor#
 //                                              ^ reference read_access semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#getConstructor().[T]
 //                                                  ^^^^^^^^^^^^^^^^^ reference read_access semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#proxyConstructors.
@@ -340,6 +352,7 @@
 //                                                                                                display_name c
 //                                                                                                signature_documentation java Class<?> c
 //                                                                                                enclosing_symbol semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#getConstructor().
+//                                                                                                relationship is_type_definition semanticdb maven jdk 11 java/lang/Class#
 //                 ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/reflect/Constructor#
 //                 ⌃ enclosing_range_end semanticdb maven . . minimized/AnnotationsOnParameterizedTypesImpl#getConstructor().[T]
 //                                               ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/reflect/Constructor#

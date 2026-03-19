@@ -57,6 +57,7 @@
 //                           signature_documentation java List<Integer> integers
 //                           enclosing_symbol semanticdb maven . . minimized/ForComprehensions#app().
 //                           kind Variable
+//                           relationship is_type_definition semanticdb maven jdk 11 java/util/List#
 //                             ^^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Collections#
 //                                         ^^^^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Collections#singletonList().
 //                                                       ^ reference read_access local 0

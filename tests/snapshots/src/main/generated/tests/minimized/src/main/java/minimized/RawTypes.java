@@ -45,6 +45,7 @@
 //                             display_name x
 //                             signature_documentation java public static final List x
 //                             kind StaticField
+//                             relationship is_type_definition semanticdb maven jdk 11 java/util/List#
 //                               ^^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Collections#
 //                                           ^^^^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Collections#singletonList().
 //                                                       ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Collections#

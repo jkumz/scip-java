@@ -29,6 +29,7 @@
 //                           display_name app
 //                           signature_documentation java public static String app()
 //                           kind StaticMethod
+//                           relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //    ⌄ enclosing_range_start semanticdb maven jdk 11 java/util/Random#
 //    ⌄ enclosing_range_start local 0
 //    ⌄ enclosing_range_start semanticdb maven jdk 11 java/util/Random#`<init>`().
@@ -39,6 +40,7 @@
 //                  signature_documentation java Random random
 //                  enclosing_symbol semanticdb maven . . minimized/Primitives#app().
 //                  kind Variable
+//                  relationship is_type_definition semanticdb maven jdk 11 java/util/Random#
 //                        ^^^^^^ reference semanticdb maven jdk 11 java/util/Random#`<init>`().
 //                                ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Random#
 //                                ⌃ enclosing_range_end local 0

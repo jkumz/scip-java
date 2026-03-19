@@ -23,6 +23,7 @@
 //                                 signature_documentation java public abstract String abstractInterfaceMethod()
 //                                 kind AbstractMethod
 //                                 relationship is_reference is_implementation semanticdb maven . . minimized/SubClasses#abstractInterfaceMethod().
+//                                 relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                                  ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                                  ⌃ enclosing_range_end semanticdb maven . . minimized/Interfaces#abstractInterfaceMethod().
   
@@ -34,6 +35,7 @@
 //                                        display_name defaultInterfaceMethod
 //                                        signature_documentation java public default String defaultInterfaceMethod()
 //                                        kind Method
+//                                        relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
       return "default";
     }
 //  ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
@@ -71,6 +73,7 @@
 //                          display_name bookService
 //                          signature_documentation java public abstract BookService bookService()
 //                          kind AbstractMethod
+//                          relationship is_type_definition semanticdb maven . . minimized/BookService#
 //                           ⌃ enclosing_range_end semanticdb maven . . minimized/BookService#
 //                           ⌃ enclosing_range_end semanticdb maven . . minimized/MyService#bookService().
   

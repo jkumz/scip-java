@@ -26,6 +26,7 @@
 //             signature_documentation java Object o
 //             enclosing_symbol semanticdb maven . . minimized/TabIndented#app().
 //             kind Variable
+//             relationship is_type_definition semanticdb maven jdk 11 java/lang/Object#
 //                   ^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/Object#
 //      ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/Override#
 //      ⌄ enclosing_range_start local 2
@@ -46,6 +47,7 @@
 //                                         display_name other
 //                                         signature_documentation java Object other
 //                                         enclosing_symbol local 2
+//                                         relationship is_type_definition semanticdb maven jdk 11 java/lang/Object#
 //                                       ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/Object#
 //                                       ⌃ enclosing_range_end local 3
           return false;
@@ -88,6 +90,7 @@
 //                             enclosing_symbol local 1
 //                             kind Method
 //                             relationship is_reference is_implementation semanticdb maven jdk 11 java/lang/Object#toString().
+//                             relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
           return "";
         }
 //      ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#

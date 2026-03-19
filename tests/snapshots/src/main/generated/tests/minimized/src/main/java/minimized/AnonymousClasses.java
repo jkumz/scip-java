@@ -53,6 +53,7 @@
 //                                  signature_documentation java Function<Integer, Integer> fn
 //                                  enclosing_symbol semanticdb maven . . minimized/AnonymousClasses#app().
 //                                  kind Variable
+//                                  relationship is_type_definition semanticdb maven jdk 11 java/util/function/Function#
 //                             ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/function/Function#
 //                             ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/Integer#
 //                             ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/Integer#
@@ -81,12 +82,14 @@
 //                               signature_documentation java @Override\npublic Integer apply(Integer integer)
 //                               enclosing_symbol local 2
 //                               kind Method
+//                               relationship is_type_definition semanticdb maven jdk 11 java/lang/Integer#
 //                               relationship is_reference is_implementation semanticdb maven jdk 11 java/util/function/Function#apply().
 //                               ^^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/Integer#
 //                                       ^^^^^^^ definition local 4
 //                                               display_name integer
 //                                               signature_documentation java Integer integer
 //                                               enclosing_symbol local 3
+//                                               relationship is_type_definition semanticdb maven jdk 11 java/lang/Integer#
 //                                             ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/Integer#
 //                                             ⌃ enclosing_range_end local 4
 //                   ⌄ enclosing_range_start local 4

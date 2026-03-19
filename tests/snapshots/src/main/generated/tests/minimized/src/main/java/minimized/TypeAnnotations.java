@@ -91,6 +91,7 @@
 //                 signature_documentation java String s
 //                 enclosing_symbol semanticdb maven . . minimized/ClassProcessed#`<init>`().
 //                 kind Variable
+//                 relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                        ^^^^^^^^^^^^^^ reference read_access semanticdb maven . . minimized/TypeAnnotation#
 //                                       ^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/String#
 //                                       ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#`<init>`().

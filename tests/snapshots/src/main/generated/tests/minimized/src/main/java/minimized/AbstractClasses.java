@@ -18,6 +18,7 @@
 //                                      display_name defaultImplementation
 //                                      signature_documentation java public String defaultImplementation()
 //                                      kind Method
+//                                      relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
       return "";
     }
 //  ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
@@ -32,6 +33,7 @@
 //                                                signature_documentation java public abstract String abstractImplementation()
 //                                                kind AbstractMethod
 //                                                relationship is_reference is_implementation semanticdb maven . . minimized/SubClasses#abstractImplementation().
+//                                                relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                                                 ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                                                 ⌃ enclosing_range_end semanticdb maven . . minimized/AbstractClasses#abstractImplementation().
   }

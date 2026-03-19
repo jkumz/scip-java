@@ -23,6 +23,7 @@
 //                                     display_name STRING
 //                                     signature_documentation java private static final String STRING
 //                                     kind StaticField
+//                                     relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                                             ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                                             ⌃ enclosing_range_end semanticdb maven . . minimized/InnerClasses#STRING.
   
@@ -81,6 +82,7 @@
 //    ^ definition semanticdb maven . . minimized/InnerClasses#InnerEnum#A.
 //      display_name A
 //      signature_documentation java InnerEnum.A /* ordinal 0 */
+//      relationship is_type_definition semanticdb maven . . minimized/InnerClasses#InnerEnum#
 //    ^ reference semanticdb maven . . minimized/InnerClasses#InnerEnum#`<init>`().
 //    ⌃ enclosing_range_end semanticdb maven . . minimized/InnerClasses#InnerEnum#A.
 //    ⌄ enclosing_range_start semanticdb maven . . minimized/InnerClasses#InnerEnum#B.
@@ -88,6 +90,7 @@
 //    ^ definition semanticdb maven . . minimized/InnerClasses#InnerEnum#B.
 //      display_name B
 //      signature_documentation java InnerEnum.B /* ordinal 1 */
+//      relationship is_type_definition semanticdb maven . . minimized/InnerClasses#InnerEnum#
 //    ^ reference semanticdb maven . . minimized/InnerClasses#InnerEnum#`<init>`().
 //    ⌃ enclosing_range_end semanticdb maven . . minimized/InnerClasses#InnerEnum#B.
 //    ⌄ enclosing_range_start semanticdb maven . . minimized/InnerClasses#InnerEnum#C.
@@ -95,6 +98,7 @@
 //    ^ definition semanticdb maven . . minimized/InnerClasses#InnerEnum#C.
 //      display_name C
 //      signature_documentation java InnerEnum.C /* ordinal 2 */
+//      relationship is_type_definition semanticdb maven . . minimized/InnerClasses#InnerEnum#
 //    ^ reference semanticdb maven . . minimized/InnerClasses#InnerEnum#`<init>`().
 //    ⌃ enclosing_range_end semanticdb maven . . minimized/InnerClasses#InnerEnum#C.
     }
@@ -127,11 +131,13 @@
 //            signature_documentation java public abstract B apply(A a)
 //            kind AbstractMethod
 //            relationship is_reference is_implementation semanticdb maven . . minimized/InnerClasses#InnerClass#apply().
+//            relationship is_type_definition semanticdb maven . . minimized/InnerClasses#InnerInterface#[B]
 //            ^ reference read_access semanticdb maven . . minimized/InnerClasses#InnerInterface#[A]
 //              ^ definition local 1
 //                display_name a
 //                signature_documentation java A a
 //                enclosing_symbol semanticdb maven . . minimized/InnerClasses#InnerInterface#apply().
+//                relationship is_type_definition semanticdb maven . . minimized/InnerClasses#InnerInterface#[A]
 //              ⌃ enclosing_range_end semanticdb maven . . minimized/InnerClasses#InnerInterface#[A]
 //              ⌃ enclosing_range_end local 1
 //                ⌃ enclosing_range_end semanticdb maven . . minimized/InnerClasses#InnerInterface#[B]
@@ -282,11 +288,13 @@
 //                         signature_documentation java @Override\npublic Integer apply(Integer integer)
 //                         kind Method
 //                         relationship is_reference is_implementation semanticdb maven . . minimized/InnerClasses#InnerInterface#apply().
+//                         relationship is_type_definition semanticdb maven jdk 11 java/lang/Integer#
 //                         ^^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/Integer#
 //                                 ^^^^^^^ definition local 3
 //                                         display_name integer
 //                                         signature_documentation java Integer integer
 //                                         enclosing_symbol semanticdb maven . . minimized/InnerClasses#InnerClass#apply().
+//                                         relationship is_type_definition semanticdb maven jdk 11 java/lang/Integer#
 //                                       ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/Integer#
 //                                       ⌃ enclosing_range_end local 3
 //             ⌄ enclosing_range_start semanticdb maven . . minimized/InnerClasses#InnerClass#field.
@@ -326,6 +334,7 @@
 //                                            display_name runInnerInterface
 //                                            signature_documentation java private static <A, B> B runInnerInterface(InnerInterface<A, B> fn, A a)
 //                                            kind StaticMethod
+//                                            relationship is_type_definition semanticdb maven . . minimized/InnerClasses#runInnerInterface().[B]
 //                                            ^^^^^^^^^^^^^^ reference read_access semanticdb maven . . minimized/InnerClasses#InnerInterface#
 //                                                           ^ reference read_access semanticdb maven . . minimized/InnerClasses#runInnerInterface().[A]
 //                                                              ^ reference read_access semanticdb maven . . minimized/InnerClasses#runInnerInterface().[B]
@@ -333,11 +342,13 @@
 //                                                                    display_name fn
 //                                                                    signature_documentation java InnerInterface<A, B> fn
 //                                                                    enclosing_symbol semanticdb maven . . minimized/InnerClasses#runInnerInterface().
+//                                                                    relationship is_type_definition semanticdb maven . . minimized/InnerClasses#InnerInterface#
 //                                                                     ^ reference read_access semanticdb maven . . minimized/InnerClasses#runInnerInterface().[A]
 //                                                                       ^ definition local 5
 //                                                                         display_name a
 //                                                                         signature_documentation java A a
 //                                                                         enclosing_symbol semanticdb maven . . minimized/InnerClasses#runInnerInterface().
+//                                                                         relationship is_type_definition semanticdb maven . . minimized/InnerClasses#runInnerInterface().[A]
 //                                                               ⌃ enclosing_range_end semanticdb maven . . minimized/InnerClasses#InnerInterface#
 //                                                               ⌃ enclosing_range_end semanticdb maven . . minimized/InnerClasses#runInnerInterface().[A]
 //                                                               ⌃ enclosing_range_end semanticdb maven . . minimized/InnerClasses#runInnerInterface().[B]
@@ -373,6 +384,7 @@
 //                                                  display_name magicEnum
 //                                                  signature_documentation java InnerEnum magicEnum
 //                                                  enclosing_symbol semanticdb maven . . minimized/InnerClasses#testEnum().
+//                                                  relationship is_type_definition semanticdb maven . . minimized/InnerClasses#InnerEnum#
 //                                                ⌃ enclosing_range_end semanticdb maven . . minimized/InnerClasses#InnerEnum#
 //                                                ⌃ enclosing_range_end local 6
 //        ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/System#
@@ -506,6 +518,7 @@
 //                                      signature_documentation java InnerInterface<String, String> fn
 //                                      enclosing_symbol semanticdb maven . . minimized/InnerClasses#testAnon().
 //                                      kind Variable
+//                                      relationship is_type_definition semanticdb maven . . minimized/InnerClasses#InnerInterface#
 //                                 ⌃ enclosing_range_end semanticdb maven . . minimized/InnerClasses#InnerInterface#
 //                                 ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                                 ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
@@ -535,11 +548,13 @@
 //                              enclosing_symbol local 8
 //                              kind Method
 //                              relationship is_reference is_implementation semanticdb maven . . minimized/InnerClasses#InnerInterface#apply().
+//                              relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                              ^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/String#
 //                                     ^ definition local 10
 //                                       display_name s
 //                                       signature_documentation java String s
 //                                       enclosing_symbol local 9
+//                                       relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                                     ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                                     ⌃ enclosing_range_end local 10
 //                   ⌄ enclosing_range_start local 10
@@ -578,6 +593,7 @@
 //                           display_name app
 //                           signature_documentation java public static String app()
 //                           kind StaticMethod
+//                           relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //    ⌄ enclosing_range_start local 11
       int a = 42;
 //        ^ definition local 11
@@ -604,6 +620,7 @@
 //                              signature_documentation java InnerClasses innerClasses
 //                              enclosing_symbol semanticdb maven . . minimized/InnerClasses#app().
 //                              kind Variable
+//                              relationship is_type_definition semanticdb maven . . minimized/InnerClasses#
 //                                    ^^^^^^^^^^^^ reference semanticdb maven . . minimized/InnerClasses#`<init>`().
 //                                                 ^ reference read_access local 11
 //                                                  ⌃ enclosing_range_end local 11
@@ -622,6 +639,7 @@
 //                          signature_documentation java InnerClass innerClass
 //                          enclosing_symbol semanticdb maven . . minimized/InnerClasses#app().
 //                          kind Variable
+//                          relationship is_type_definition semanticdb maven . . minimized/InnerClasses#InnerClass#
 //                            ^^^^^^^^^^^^ reference read_access local 12
 //                                             ^^^^^^^^^^ reference semanticdb maven . . minimized/InnerClasses#InnerClass#`<init>`().
 //                                                        ^ reference read_access local 11

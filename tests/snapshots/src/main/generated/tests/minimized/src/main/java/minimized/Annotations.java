@@ -130,6 +130,7 @@
 //               display_name value
 //               signature_documentation java public abstract String value()
 //               kind AbstractMethod
+//               relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                           ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                           ⌃ enclosing_range_end semanticdb maven . . minimized/Annotations#value().
   
@@ -141,6 +142,7 @@
 //                display_name format
 //                signature_documentation java public abstract String format()
 //                kind AbstractMethod
+//                relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                            ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                            ⌃ enclosing_range_end semanticdb maven . . minimized/Annotations#format().
   }

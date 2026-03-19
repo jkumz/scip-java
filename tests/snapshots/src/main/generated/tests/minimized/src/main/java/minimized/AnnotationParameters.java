@@ -49,6 +49,7 @@
 //               display_name value
 //               signature_documentation java public abstract String value()
 //               kind AbstractMethod
+//               relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                           ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                           ⌃ enclosing_range_end semanticdb maven . . minimized/Nullable#value().
   }
@@ -70,6 +71,7 @@
 //                         display_name value
 //                         signature_documentation java public abstract SuppressWarnings value()
 //                         kind AbstractMethod
+//                         relationship is_type_definition semanticdb maven jdk 11 java/lang/SuppressWarnings#
 //                          ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#
 //                          ⌃ enclosing_range_end semanticdb maven . . minimized/BarRef#value().
   }
@@ -136,6 +138,7 @@
 //            display_name test4
 //            signature_documentation java @Nullable("what")\npublic abstract Foo test4()
 //            kind AbstractMethod
+//            relationship is_type_definition semanticdb maven . . minimized/Foo#
 //             ⌃ enclosing_range_end semanticdb maven . . minimized/Foo#
 //             ⌃ enclosing_range_end semanticdb maven . . minimized/Foo#test4().
   

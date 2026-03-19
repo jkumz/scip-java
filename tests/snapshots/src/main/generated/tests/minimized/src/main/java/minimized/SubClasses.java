@@ -30,6 +30,7 @@
 //                                       signature_documentation java @Override\npublic String abstractImplementation()
 //                                       kind Method
 //                                       relationship is_reference is_implementation semanticdb maven . . minimized/AbstractClasses#abstractImplementation().
+//                                       relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
       return "abstract";
     }
 //  ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
@@ -48,6 +49,7 @@
 //                                        signature_documentation java @Override\npublic String abstractInterfaceMethod()
 //                                        kind Method
 //                                        relationship is_reference is_implementation semanticdb maven . . minimized/Interfaces#abstractInterfaceMethod().
+//                                        relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
       return "abstractInterface";
     }
 //  ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
@@ -61,6 +63,7 @@
 //                           display_name app
 //                           signature_documentation java public static String app()
 //                           kind StaticMethod
+//                           relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //    ⌄ enclosing_range_start semanticdb maven . . minimized/SubClasses#
 //    ⌄ enclosing_range_start local 0
 //    ⌄ enclosing_range_start semanticdb maven . . minimized/SubClasses#`<init>`().
@@ -71,6 +74,7 @@
 //                 signature_documentation java SubClasses s
 //                 enclosing_symbol semanticdb maven . . minimized/SubClasses#app().
 //                 kind Variable
+//                 relationship is_type_definition semanticdb maven . . minimized/SubClasses#
 //                       ^^^^^^^^^^ reference semanticdb maven . . minimized/SubClasses#`<init>`().
 //                                   ⌃ enclosing_range_end semanticdb maven . . minimized/SubClasses#
 //                                   ⌃ enclosing_range_end local 0

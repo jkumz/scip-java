@@ -92,6 +92,7 @@
 //                                                                              display_name list
 //                                                                              signature_documentation java List<T> list
 //                                                                              enclosing_symbol semanticdb maven . . minimized/ParameterizedTypes#iteratorable().
+//                                                                              relationship is_type_definition semanticdb maven jdk 11 java/util/List#
 //                              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/Iterable#
 //                              ⌃ enclosing_range_end semanticdb maven . . minimized/ParameterizedTypes#[A]
 //                                            ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Iterator#
@@ -114,16 +115,19 @@
 //                    display_name app
 //                    signature_documentation java public String app(A a, B b)
 //                    kind Method
+//                    relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                    ^ reference read_access semanticdb maven . . minimized/ParameterizedTypes#[A]
 //                      ^ definition local 1
 //                        display_name a
 //                        signature_documentation java A a
 //                        enclosing_symbol semanticdb maven . . minimized/ParameterizedTypes#app().
+//                        relationship is_type_definition semanticdb maven . . minimized/ParameterizedTypes#[A]
 //                         ^ reference read_access semanticdb maven . . minimized/ParameterizedTypes#[B]
 //                           ^ definition local 2
 //                             display_name b
 //                             signature_documentation java B b
 //                             enclosing_symbol semanticdb maven . . minimized/ParameterizedTypes#app().
+//                             relationship is_type_definition semanticdb maven . . minimized/ParameterizedTypes#[B]
 //                      ⌃ enclosing_range_end semanticdb maven . . minimized/ParameterizedTypes#[A]
 //                      ⌃ enclosing_range_end local 1
 //                           ⌃ enclosing_range_end semanticdb maven . . minimized/ParameterizedTypes#[B]
@@ -152,6 +156,7 @@
 //                                          display_name doStuff
 //                                          signature_documentation java public Map<? extends String, ?> doStuff()
 //                                          kind Method
+//                                          relationship is_type_definition semanticdb maven jdk 11 java/util/Map#
 //                            ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                                ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Map#
 //                                                           ⌃ enclosing_range_end semanticdb maven . . minimized/ParameterizedTypes#doStuff().
@@ -170,6 +175,7 @@
 //                                                                         display_name createQuadruplet
 //                                                                         signature_documentation java public Quadruplet<String, ?, Object, ? super Integer> createQuadruplet()
 //                                                                         kind Method
+//                                                                         relationship is_type_definition semanticdb maven . . minimized/ParameterizedTypes#Quadruplet#
 //                                                     ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/Integer#
 //                                                      ⌃ enclosing_range_end semanticdb maven . . minimized/ParameterizedTypes#Quadruplet#
 //                                                      ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#

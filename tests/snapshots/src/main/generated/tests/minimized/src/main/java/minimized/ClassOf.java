@@ -18,6 +18,7 @@
 //                           display_name app
 //                           signature_documentation java public static String app()
 //                           kind StaticMethod
+//                           relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //           ⌄ enclosing_range_start semanticdb maven . . minimized/ClassOf#
 //           ⌄ enclosing_range_start semanticdb maven . . minimized/ClassOf#class.
 //           ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/Class#getName().

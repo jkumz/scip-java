@@ -116,6 +116,7 @@
 //                                               display_name t
 //                                               signature_documentation java T t
 //                                               enclosing_symbol semanticdb maven . . minimized/TypeVariables#app().
+//                                               relationship is_type_definition semanticdb maven . . minimized/TypeVariables#app().[T]
 //                               ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#C#
 //                               ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#I#
 //                                             ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#app().[T]

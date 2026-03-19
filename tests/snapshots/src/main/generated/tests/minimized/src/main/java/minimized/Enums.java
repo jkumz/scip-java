@@ -38,6 +38,7 @@
 //  ^ definition semanticdb maven . . minimized/Enums#A.
 //    display_name A("A", 420)
 //    signature_documentation java Enums.A("A", 420) /* ordinal 0 */
+//    relationship is_type_definition semanticdb maven . . minimized/Enums#
 //  ^ reference semanticdb maven . . minimized/Enums#`<init>`().
 //            ⌃ enclosing_range_end semanticdb maven . . minimized/Enums#A.
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Enums#B.
@@ -45,6 +46,7 @@
 //  ^ definition semanticdb maven . . minimized/Enums#B.
 //    display_name B("B", 1)
 //    signature_documentation java Enums.B("B", 1) /* ordinal 1 */
+//    relationship is_type_definition semanticdb maven . . minimized/Enums#
 //  ^ reference semanticdb maven . . minimized/Enums#`<init>`().
 //          ⌃ enclosing_range_end semanticdb maven . . minimized/Enums#B.
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Enums#C.
@@ -52,6 +54,7 @@
 //  ^ definition semanticdb maven . . minimized/Enums#C.
 //    display_name C("C", 5)
 //    signature_documentation java Enums.C("C", 5) /* ordinal 2 */
+//    relationship is_type_definition semanticdb maven . . minimized/Enums#
 //  ^ reference semanticdb maven . . minimized/Enums#`<init>`().
 //          ⌃ enclosing_range_end semanticdb maven . . minimized/Enums#C.
 //  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
@@ -62,6 +65,7 @@
 //                      display_name value
 //                      signature_documentation java public String value
 //                      kind Field
+//                      relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                     ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                     ⌃ enclosing_range_end semanticdb maven . . minimized/Enums#value.
   
@@ -79,6 +83,7 @@
 //                     display_name value
 //                     signature_documentation java String value
 //                     enclosing_symbol semanticdb maven . . minimized/Enums#`<init>`().
+//                     relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                          ^ definition local 1
 //                            display_name a
 //                            signature_documentation java int a
@@ -104,6 +109,7 @@
 //                           display_name app
 //                           signature_documentation java public static String app()
 //                           kind StaticMethod
+//                           relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //    ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //    ⌄ enclosing_range_start local 2
 //                 ⌄ enclosing_range_start semanticdb maven jdk 11 java/util/Arrays#
@@ -127,6 +133,7 @@
 //               signature_documentation java String all
 //               enclosing_symbol semanticdb maven . . minimized/Enums#app().
 //               kind Variable
+//               relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //                 ^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Arrays#
 //                        ^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Arrays#stream().
 //                               ^^^^^^ reference read_access semanticdb maven . . minimized/Enums#values().
@@ -135,6 +142,7 @@
 //                                               display_name e
 //                                               signature_documentation java Enums e
 //                                               enclosing_symbol semanticdb maven . . minimized/Enums#app().
+//                                               relationship is_type_definition semanticdb maven . . minimized/Enums#
 //                                                  ^ reference read_access local 3
 //                                                    ^^^^^ reference read_access semanticdb maven . . minimized/Enums#value.
 //                                                           ^^^ reference read_access semanticdb maven jdk 11 java/util/stream/Stream#map().

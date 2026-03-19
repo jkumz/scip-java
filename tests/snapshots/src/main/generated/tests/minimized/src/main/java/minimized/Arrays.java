@@ -18,6 +18,7 @@
 //                           display_name app
 //                           signature_documentation java public static String app()
 //                           kind StaticMethod
+//                           relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
 //    ⌄ enclosing_range_start local 0
       int[] a = {1, 2, 3};
 //          ^ definition local 0
