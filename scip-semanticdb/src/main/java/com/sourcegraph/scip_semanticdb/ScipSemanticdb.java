@@ -61,7 +61,9 @@ public class ScipSemanticdb {
   private void runTyped(List<Path> files, PackageTable packages) {
     writer.emitTyped(typedMetadata());
     InverseReferenceRelationships references = inverseReferenceRelationships(files);
-    filesStream(files).forEach(document -> processTypedDocument(document, packages, references));
+    filesStream(files)
+        .filter(this::matchesAllowlist)
+        .forEach(document -> processTypedDocument(document, packages, references));
   }
 
   private String typedSymbol(String symbol, Package pkg) {
@@ -358,6 +360,37 @@ public class ScipSemanticdb {
 
   private Stream<Path> filesStream(List<Path> files) {
     return options.parallel ? files.parallelStream() : files.stream();
+  }
+
+  /**
+   * Checks whether a .semanticdb file path matches the incremental allowlist.
+   * If no allowlist is configured (options.allowFiles == null), all files pass.
+   *
+   * The .semanticdb files mirror the source tree under META-INF/semanticdb/,
+   * e.g. ".../META-INF/semanticdb/com/example/Foo.java.semanticdb" maps to
+   * the relative source path "com/example/Foo.java".
+   *
+   * @param semanticdbPath - the path to a .semanticdb file.
+   * @returns true if the file should be processed.
+   */
+  private boolean matchesAllowlist(Path semanticdbPath) {
+    if (options.allowFiles == null) {
+      return true;
+    }
+    String filename = semanticdbPath.toString();
+    // JAR entries don't follow META-INF/semanticdb layout — always process
+    if (filename.endsWith(".jar")) {
+      return true;
+    }
+    int metaInfIdx = filename.indexOf("META-INF/semanticdb/");
+    if (metaInfIdx < 0) {
+      return true;
+    }
+    String relativePath = filename.substring(metaInfIdx + "META-INF/semanticdb/".length());
+    if (relativePath.endsWith(".semanticdb")) {
+      relativePath = relativePath.substring(0, relativePath.length() - ".semanticdb".length());
+    }
+    return options.allowFiles.contains(relativePath);
   }
 
   private static class InverseReferenceRelationships {

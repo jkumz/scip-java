@@ -64,7 +64,8 @@ public class BazelBuildTool {
             mavenPackages,
             /* emitInverseRelationships */ true,
             /* allowEmptyIndex */ true,
-            /* indexDirectoryEntries */ false // because Bazel only compiles to jar files.
+            /* indexDirectoryEntries */ false, // because Bazel only compiles to jar files.
+            /* allowFiles */ null
             );
     ScipSemanticdb.run(scipOptions);
 

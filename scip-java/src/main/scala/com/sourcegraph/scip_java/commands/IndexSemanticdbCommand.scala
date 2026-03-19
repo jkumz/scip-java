@@ -1,5 +1,6 @@
 package com.sourcegraph.scip_java.commands
 
+import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
 import java.util.concurrent.TimeUnit
@@ -60,6 +61,12 @@ final case class IndexSemanticdbCommand(
         "Maven->Maven or Gradle->Gradle projects because those build tools compile sources to classfiles inside directories."
     )
     allowExportingGlobalSymbolsFromDirectoryEntries: Boolean = true,
+    @Description("Path to a file containing relative source paths (one per line) to include in an incremental delta index. " +
+      "If not set, all files are indexed. Mutually exclusive with --changed-files.")
+    changedFilesPath: Option[Path] = None,
+    @Description("Comma-separated list of relative source paths to include in an incremental delta index. " +
+      "If not set, all files are indexed. Mutually exclusive with --changed-files-path.")
+    changedFiles: Option[String] = None,
     @Inline()
     app: Application = Application.default
 ) extends Command {
@@ -89,6 +96,20 @@ final case class IndexSemanticdbCommand(
         )
         .distinct
         .toList
+    val allowFiles: java.util.Set[String] = (changedFilesPath, changedFiles) match {
+      case (Some(_), Some(_)) =>
+        app.error("Cannot specify both --changed-files-path and --changed-files. Use one or the other.")
+        return 1
+      case (Some(path), None) =>
+        val absPath = if (path.isAbsolute) path else sourceroot.resolve(path)
+        Files.readAllLines(absPath).asScala.filter(_.nonEmpty).toSet.asJava
+      case (None, Some(files)) =>
+        files.split(",").map(_.trim).filter(_.nonEmpty).toSet.asJava
+      case (None, None) => null
+    }
+    // When doing incremental indexing, automatically disable inverse relationships
+    // to avoid the O(all files) scan.
+    val effectiveEmitInverse = if (allowFiles != null) false else emitInverseRelationships
     val options =
       new ScipSemanticdbOptions(
         absoluteTargetroots.asJava,
@@ -104,9 +125,10 @@ final case class IndexSemanticdbCommand(
         format,
         parallel,
         packages.map(_.toPackageInformation).asJava,
-        emitInverseRelationships,
+        effectiveEmitInverse,
         allowEmptyIndex,
-        allowExportingGlobalSymbolsFromDirectoryEntries
+        allowExportingGlobalSymbolsFromDirectoryEntries,
+        allowFiles
       )
     ScipSemanticdb.run(options)
     postPackages(packages)
