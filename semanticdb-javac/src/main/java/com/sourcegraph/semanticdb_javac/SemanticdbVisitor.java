@@ -322,7 +322,7 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
       if (sym.getKind() == ElementKind.ENUM_CONSTANT) {
         TreePath typeTreePath = nodes.get(node.getInitializer());
         Element typeSym = trees.getElement(typeTreePath);
-        if (typeSym != null) emitSymbolOccurrence(typeSym, range, Role.REFERENCE, Optional.empty(), 0);
+        if (typeSym != null) emitSymbolOccurrence(typeSym, range, Role.REFERENCE, Optional.empty(), SCIP_READ_ACCESS);
       }
     }
   }

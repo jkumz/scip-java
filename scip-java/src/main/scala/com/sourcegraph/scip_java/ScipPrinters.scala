@@ -204,13 +204,12 @@ object ScipPrinters {
         "import"
       else
         "reference"
-    val accessSuffix = List(
+    val roleParts = List(
+      Some(baseRole),
       if (isWriteAccess) Some("write_access") else None,
       if (isReadAccess) Some("read_access") else None
-    ).flatten.mkString(" ", " ", "")
-    val role =
-      if (accessSuffix.trim.isEmpty) baseRole
-      else baseRole + accessSuffix
+    ).flatten
+    val role = roleParts.mkString(" ")
     val indent =
       if (pos.startColumn + sourceIndent.length > comment.length)
         " " * (pos.startColumn + sourceIndent.length - comment.length)
