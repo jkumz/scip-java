@@ -3,6 +3,8 @@ package com.sourcegraph.scip_semanticdb;
 import com.sourcegraph.Scip;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Set;
+import javax.annotation.Nullable;
 
 /** Configuration options to tweak the scip-semanticdb command. */
 public class ScipSemanticdbOptions {
@@ -19,6 +21,16 @@ public class ScipSemanticdbOptions {
   public final boolean allowEmptyIndex;
   public final boolean allowExportingGlobalSymbolsFromDirectoryEntries;
 
+  /**
+   * When non-null, only .semanticdb files whose source path matches this set are
+   * processed. Used for incremental indexing — the output index.scip will contain
+   * only the documents for these files (a delta index).
+   *
+   * Paths should be relative source paths matching the .semanticdb file structure,
+   * e.g. "com/example/Foo.java".
+   */
+  public final @Nullable Set<String> allowFiles;
+
   public ScipSemanticdbOptions(
       List<Path> targetroots,
       Path output,
@@ -30,7 +42,8 @@ public class ScipSemanticdbOptions {
       List<MavenPackage> packages,
       boolean emitInverseRelationships,
       boolean allowEmptyIndex,
-      boolean allowExportingGlobalSymbolsFromDirectoryEntries) {
+      boolean allowExportingGlobalSymbolsFromDirectoryEntries,
+      @Nullable Set<String> allowFiles) {
     this.targetroots = targetroots;
     this.output = output;
     this.sourceroot = sourceroot;
@@ -43,5 +56,6 @@ public class ScipSemanticdbOptions {
     this.allowEmptyIndex = allowEmptyIndex;
     this.allowExportingGlobalSymbolsFromDirectoryEntries =
         allowExportingGlobalSymbolsFromDirectoryEntries;
+    this.allowFiles = allowFiles;
   }
 }

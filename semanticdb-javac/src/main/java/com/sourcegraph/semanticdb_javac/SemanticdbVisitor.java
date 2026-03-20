@@ -19,6 +19,10 @@ import com.sun.source.tree.TypeCastTree;
 import com.sun.source.tree.TypeParameterTree;
 import com.sun.source.tree.ParameterizedTypeTree;
 import com.sun.source.tree.AnnotatedTypeTree;
+import com.sun.source.tree.ImportTree;
+import com.sun.source.tree.AssignmentTree;
+import com.sun.source.tree.CompoundAssignmentTree;
+import com.sun.source.tree.UnaryTree;
 
 import javax.tools.Diagnostic;
 import javax.lang.model.element.Element;
@@ -29,6 +33,7 @@ import javax.lang.model.element.TypeElement;
 import javax.lang.model.element.ExecutableElement;
 import javax.lang.model.type.NoType;
 import javax.lang.model.type.TypeMirror;
+import javax.lang.model.type.TypeKind;
 import javax.lang.model.type.DeclaredType;
 import javax.lang.model.util.Types;
 import javax.lang.model.util.Elements;
@@ -47,6 +52,7 @@ import java.util.Set;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Iterator;
+import java.util.Collections;
 import java.security.NoSuchAlgorithmException;
 import java.util.stream.Collectors;
 
@@ -108,15 +114,20 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
 
   private Optional<Semanticdb.Range> emitSymbolOccurrence(
       Element sym, Tree tree, Name name, Role role, CompilerRange kind) {
+    return emitSymbolOccurrence(sym, tree, name, role, kind, 0);
+  }
+
+  private Optional<Semanticdb.Range> emitSymbolOccurrence(
+      Element sym, Tree tree, Name name, Role role, CompilerRange kind, int symbolRoles) {
     if (sym == null || name == null) return Optional.empty();
     Optional<Semanticdb.Range> range = semanticdbRange(tree, kind, sym, name.toString());
     if (role == Role.DEFINITION) {
-      emitSymbolOccurrence(sym, range, role, computeEnclosingRange(tree));
+      emitSymbolOccurrence(sym, range, role, computeEnclosingRange(tree), 0);
       // Only emit SymbolInformation for symbols that are defined in this compilation unit.
       emitSymbolInformation(sym, tree);
       return range;
     }
-    emitSymbolOccurrence(sym, range, role, Optional.empty());
+    emitSymbolOccurrence(sym, range, role, computeEnclosingRange(tree), symbolRoles);
     return range;
   }
 
@@ -124,10 +135,11 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
       Element sym,
       Optional<Semanticdb.Range> range,
       Role role,
-      Optional<Semanticdb.Range> enclosingRange) {
+      Optional<Semanticdb.Range> enclosingRange,
+      int symbolRoles) {
     if (sym == null) return;
     Optional<Semanticdb.SymbolOccurrence> occ =
-        semanticdbOccurrence(sym, range, role, enclosingRange);
+        semanticdbOccurrence(sym, range, role, enclosingRange, symbolRoles);
     occ.ifPresent(occurrences::add);
   }
 
@@ -190,6 +202,11 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
       case LOCAL_VARIABLE:
         builder.setKind(Kind.LOCAL);
         break;
+    }
+
+    List<String> typeDefSymbols = computeTypeDefinitionSymbols(sym);
+    if (!typeDefSymbols.isEmpty()) {
+      builder.addAllTypeDefinitionSymbols(typeDefSymbols);
     }
 
     Semanticdb.SymbolInformation info = builder.build();
@@ -305,7 +322,7 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
       if (sym.getKind() == ElementKind.ENUM_CONSTANT) {
         TreePath typeTreePath = nodes.get(node.getInitializer());
         Element typeSym = trees.getElement(typeTreePath);
-        if (typeSym != null) emitSymbolOccurrence(typeSym, range, Role.REFERENCE, Optional.empty());
+        if (typeSym != null) emitSymbolOccurrence(typeSym, range, Role.REFERENCE, Optional.empty(), SCIP_READ_ACCESS);
       }
     }
   }
@@ -322,8 +339,10 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
           TreePath parentPath = treePath.getParentPath();
           Element parentSym = trees.getElement(parentPath);
           if (parentSym == null || parentSym.getKind() != null) {
+            Role role = isInsideImport(treePath) ? Role.IMPORT : Role.REFERENCE;
+            int accessRoles = (role == Role.REFERENCE) ? computeAccessRoles(treePath) : 0;
             emitSymbolOccurrence(
-                sym, node, sym.getSimpleName(), Role.REFERENCE, CompilerRange.FROM_START_TO_END);
+                sym, node, sym.getSimpleName(), role, CompilerRange.FROM_START_TO_END, accessRoles);
           }
         }
       }
@@ -341,9 +360,111 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
   private void resolveMemberSelectTree(MemberSelectTree node, TreePath treePath) {
     Element sym = trees.getElement(treePath);
     if (sym != null) {
+      Role role = isInsideImport(treePath) ? Role.IMPORT : Role.REFERENCE;
+      int accessRoles = (role == Role.REFERENCE) ? computeAccessRoles(treePath) : 0;
       emitSymbolOccurrence(
-          sym, node, sym.getSimpleName(), Role.REFERENCE, CompilerRange.FROM_END_TO_SYMBOL_NAME);
+          sym, node, sym.getSimpleName(), role, CompilerRange.FROM_END_TO_SYMBOL_NAME, accessRoles);
     }
+  }
+
+  /**
+   * Checks whether the given tree path is inside an import statement by walking
+   * up the ancestor chain looking for an ImportTree node.
+   *
+   * @param treePath - The tree path to check.
+   * @returns true if any ancestor is an ImportTree, false otherwise.
+   */
+  private boolean isInsideImport(TreePath treePath) {
+    TreePath current = treePath.getParentPath();
+    while (current != null) {
+      if (current.getLeaf() instanceof ImportTree) return true;
+      current = current.getParentPath();
+    }
+    return false;
+  }
+
+  // SCIP SymbolRole bit constants
+  private static final int SCIP_WRITE_ACCESS = 0x4;
+  private static final int SCIP_READ_ACCESS = 0x8;
+
+  /**
+   * Computes the SCIP WriteAccess/ReadAccess bitfield for a reference occurrence
+   * by inspecting the parent AST node to determine the access context.
+   *
+   * - AssignmentTree LHS → WriteAccess only
+   * - CompoundAssignmentTree LHS (+=, -=, etc.) → WriteAccess | ReadAccess
+   * - UnaryTree with ++/-- → WriteAccess | ReadAccess
+   * - All other reference contexts → ReadAccess
+   *
+   * @param treePath - The tree path of the reference occurrence to analyze.
+   * @returns Bitfield with WriteAccess (0x4) and/or ReadAccess (0x8) set.
+   */
+  private int computeAccessRoles(TreePath treePath) {
+    TreePath parentPath = treePath.getParentPath();
+    if (parentPath == null) return SCIP_READ_ACCESS;
+    Tree parent = parentPath.getLeaf();
+    Tree current = treePath.getLeaf();
+
+    if (parent instanceof AssignmentTree) {
+      AssignmentTree assignment = (AssignmentTree) parent;
+      if (assignment.getVariable() == current) {
+        return SCIP_WRITE_ACCESS;
+      }
+    } else if (parent instanceof CompoundAssignmentTree) {
+      CompoundAssignmentTree compound = (CompoundAssignmentTree) parent;
+      if (compound.getVariable() == current) {
+        return SCIP_WRITE_ACCESS | SCIP_READ_ACCESS;
+      }
+    } else if (parent instanceof UnaryTree) {
+      UnaryTree unary = (UnaryTree) parent;
+      Tree.Kind kind = unary.getKind();
+      if (kind == Tree.Kind.PREFIX_INCREMENT || kind == Tree.Kind.PREFIX_DECREMENT
+          || kind == Tree.Kind.POSTFIX_INCREMENT || kind == Tree.Kind.POSTFIX_DECREMENT) {
+        return SCIP_WRITE_ACCESS | SCIP_READ_ACCESS;
+      }
+    }
+    return SCIP_READ_ACCESS;
+  }
+
+  /**
+   * Computes the type definition symbol(s) for a given element by inspecting
+   * its declared type. For fields, local variables, and parameters, this is the
+   * variable's declared type. For methods, this is the return type.
+   *
+   * Primitives and void types are excluded since they have no type definition symbol.
+   *
+   * @param sym - The element to extract type definition symbols from.
+   * @returns A list of SemanticDB symbol strings for the type definition, or empty.
+   */
+  private List<String> computeTypeDefinitionSymbols(Element sym) {
+    TypeMirror typeMirror;
+    switch (sym.getKind()) {
+      case FIELD:
+      case LOCAL_VARIABLE:
+      case PARAMETER:
+      case EXCEPTION_PARAMETER:
+      case ENUM_CONSTANT:
+        typeMirror = sym.asType();
+        break;
+      case METHOD:
+        typeMirror = ((ExecutableElement) sym).getReturnType();
+        break;
+      default:
+        return Collections.emptyList();
+    }
+    if (typeMirror == null
+        || typeMirror.getKind().isPrimitive()
+        || typeMirror.getKind() == TypeKind.VOID
+        || typeMirror.getKind() == TypeKind.NONE) {
+      return Collections.emptyList();
+    }
+    Element typeElement = types.asElement(typeMirror);
+    if (typeElement == null) return Collections.emptyList();
+    String typeSymbol = semanticdbSymbol(typeElement);
+    if (typeSymbol == null || typeSymbol.equals(SemanticdbSymbols.NONE)) {
+      return Collections.emptyList();
+    }
+    return Collections.singletonList(typeSymbol);
   }
 
   private void resolveNewClassTree(NewClassTree node, TreePath treePath) {
@@ -472,11 +593,12 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
       Element sym,
       Optional<Semanticdb.Range> range,
       Role role,
-      Optional<Semanticdb.Range> enclosingRange) {
+      Optional<Semanticdb.Range> enclosingRange,
+      int symbolRoles) {
     if (range.isPresent()) {
       String ssym = semanticdbSymbol(sym);
       if (!ssym.equals(SemanticdbSymbols.NONE)) {
-        Semanticdb.SymbolOccurrence occ = symbolOccurrence(ssym, range.get(), role, enclosingRange);
+        Semanticdb.SymbolOccurrence occ = symbolOccurrence(ssym, range.get(), role, enclosingRange, symbolRoles);
         return Optional.of(occ);
       } else {
         return Optional.empty();

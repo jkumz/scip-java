@@ -132,6 +132,12 @@ message SymbolInformation {
   // -- OUT OF SPEC -- //
   repeated string definition_relationships = 21;
   // -- OUT OF SPEC -- //
+
+  // -- OUT OF SPEC -- //
+  // Symbols for the type definition(s) of this symbol.
+  // Used to emit SCIP Relationship.is_type_definition.
+  repeated string type_definition_symbols = 22;
+  // -- OUT OF SPEC -- //
 }
 
 message Access {
@@ -178,6 +184,10 @@ message SymbolOccurrence {
     // WE added SYNTHETIC_DEFINITION fix the following scip-java issue:
     // https://github.com/sourcegraph/scip-java/issues/399
     SYNTHETIC_DEFINITION = 3;
+    // NOTE: this role does not exist in the upstream SemanticDB spec.
+    // It is added to support SCIP's SymbolRole.Import bitflag.
+    // Marks occurrences within import statements.
+    IMPORT = 4;
   }
   Range range = 1;
   string symbol = 2;
@@ -186,6 +196,10 @@ message SymbolOccurrence {
   // It is added to support SCIP's enclosing_range field.
   // This is the range of the nearest non-trivial enclosing AST node.
   optional Range enclosing_range = 4;
+  // NOTE: this field does not exist in the upstream SemanticDB spec.
+  // Bitfield for additional SCIP SymbolRoles (e.g. WriteAccess=0x4, ReadAccess=0x8).
+  // Uses the same bit layout as SCIP's SymbolRole enum.
+  int32 symbol_roles = 5;
 }
 
 message Scope {

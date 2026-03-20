@@ -41,13 +41,16 @@
 //                    signature_documentation java @interface Nullable
 //                    kind Interface
 //                    relationship is_implementation semanticdb maven jdk 11 java/lang/annotation/Annotation#
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Nullable#value().
     String value() default "";
-//  ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
+//  ^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/String#
 //         ^^^^^ definition semanticdb maven . . minimized/Nullable#value().
 //               display_name value
 //               signature_documentation java public abstract String value()
 //               kind AbstractMethod
+//               relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
+//                           ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                           ⌃ enclosing_range_end semanticdb maven . . minimized/Nullable#value().
   }
 //⌃ enclosing_range_end semanticdb maven . . minimized/Nullable#
@@ -60,13 +63,16 @@
 //                  signature_documentation java @interface BarRef
 //                  kind Interface
 //                  relationship is_implementation semanticdb maven jdk 11 java/lang/annotation/Annotation#
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/BarRef#value().
     SuppressWarnings value();
-//  ^^^^^^^^^^^^^^^^ reference semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//  ^^^^^^^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/SuppressWarnings#
 //                   ^^^^^ definition semanticdb maven . . minimized/BarRef#value().
 //                         display_name value
 //                         signature_documentation java public abstract SuppressWarnings value()
 //                         kind AbstractMethod
+//                         relationship is_type_definition semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//                          ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#
 //                          ⌃ enclosing_range_end semanticdb maven . . minimized/BarRef#value().
   }
 //⌃ enclosing_range_end semanticdb maven . . minimized/BarRef#
@@ -77,9 +83,11 @@
 //              display_name Foo
 //              signature_documentation java interface Foo
 //              kind Interface
+//  ⌄ enclosing_range_start semanticdb maven . . minimized/Bar#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Foo#test().
     @Bar(-1d)
-//   ^^^ reference semanticdb maven . . minimized/Bar#
+//   ^^^ reference read_access semanticdb maven . . minimized/Bar#
+//          ⌃ enclosing_range_end semanticdb maven . . minimized/Bar#
     double test();
 //         ^^^^ definition semanticdb maven . . minimized/Foo#test().
 //              display_name test
@@ -87,12 +95,18 @@
 //              kind AbstractMethod
 //               ⌃ enclosing_range_end semanticdb maven . . minimized/Foo#test().
   
+//  ⌄ enclosing_range_start semanticdb maven . . minimized/Bar#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Foo#test2().
     @Bar(~5)
-//   ^^^ reference semanticdb maven . . minimized/Bar#
+//   ^^^ reference read_access semanticdb maven . . minimized/Bar#
+//         ⌃ enclosing_range_end semanticdb maven . . minimized/Bar#
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//                    ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#value().
     @SuppressWarnings(value = "unchecked")
-//   ^^^^^^^^^^^^^^^^ reference semanticdb maven jdk 11 java/lang/SuppressWarnings#
-//                    ^^^^^ reference semanticdb maven jdk 11 java/lang/SuppressWarnings#value().
+//   ^^^^^^^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//                    ^^^^^ reference write_access semanticdb maven jdk 11 java/lang/SuppressWarnings#value().
+//                                      ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#value().
+//                                       ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#
     double test2();
 //         ^^^^^ definition semanticdb maven . . minimized/Foo#test2().
 //               display_name test2
@@ -100,9 +114,11 @@
 //               kind AbstractMethod
 //                ⌃ enclosing_range_end semanticdb maven . . minimized/Foo#test2().
   
+//  ⌄ enclosing_range_start semanticdb maven . . minimized/BarB#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Foo#test3().
     @BarB(!true)
-//   ^^^^ reference semanticdb maven . . minimized/BarB#
+//   ^^^^ reference read_access semanticdb maven . . minimized/BarB#
+//             ⌃ enclosing_range_end semanticdb maven . . minimized/BarB#
     double test3();
 //         ^^^^^ definition semanticdb maven . . minimized/Foo#test3().
 //               display_name test3
@@ -110,20 +126,27 @@
 //               kind AbstractMethod
 //                ⌃ enclosing_range_end semanticdb maven . . minimized/Foo#test3().
   
+//  ⌄ enclosing_range_start semanticdb maven . . minimized/Nullable#
+//  ⌄ enclosing_range_start semanticdb maven . . minimized/Foo#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Foo#test4().
     @Nullable(("what"))
-//   ^^^^^^^^ reference semanticdb maven . . minimized/Nullable#
+//   ^^^^^^^^ reference read_access semanticdb maven . . minimized/Nullable#
+//                    ⌃ enclosing_range_end semanticdb maven . . minimized/Nullable#
     Foo test4();
-//  ^^^ reference semanticdb maven . . minimized/Foo#
+//  ^^^ reference read_access semanticdb maven . . minimized/Foo#
 //      ^^^^^ definition semanticdb maven . . minimized/Foo#test4().
 //            display_name test4
 //            signature_documentation java @Nullable("what")\npublic abstract Foo test4()
 //            kind AbstractMethod
+//            relationship is_type_definition semanticdb maven . . minimized/Foo#
+//             ⌃ enclosing_range_end semanticdb maven . . minimized/Foo#
 //             ⌃ enclosing_range_end semanticdb maven . . minimized/Foo#test4().
   
+//  ⌄ enclosing_range_start semanticdb maven . . minimized/Bar#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/Foo#testCast().
     @Bar((double) -1)
-//   ^^^ reference semanticdb maven . . minimized/Bar#
+//   ^^^ reference read_access semanticdb maven . . minimized/Bar#
+//                  ⌃ enclosing_range_end semanticdb maven . . minimized/Bar#
     double testCast();
 //         ^^^^^^^^ definition semanticdb maven . . minimized/Foo#testCast().
 //                  display_name testCast
@@ -139,11 +162,17 @@
 //                  display_name TestRef
 //                  signature_documentation java interface TestRef
 //                  kind Interface
+//  ⌄ enclosing_range_start semanticdb maven . . minimized/BarRef#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/TestRef#testCase().
+//          ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//                            ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/SuppressWarnings#value().
     @BarRef(@SuppressWarnings(value = "unchecked"))
-//   ^^^^^^ reference semanticdb maven . . minimized/BarRef#
-//           ^^^^^^^^^^^^^^^^ reference semanticdb maven jdk 11 java/lang/SuppressWarnings#
-//                            ^^^^^ reference semanticdb maven jdk 11 java/lang/SuppressWarnings#value().
+//   ^^^^^^ reference read_access semanticdb maven . . minimized/BarRef#
+//           ^^^^^^^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//                            ^^^^^ reference write_access semanticdb maven jdk 11 java/lang/SuppressWarnings#value().
+//                                              ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#value().
+//                                               ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/SuppressWarnings#
+//                                                ⌃ enclosing_range_end semanticdb maven . . minimized/BarRef#
     abstract double testCase();
 //                  ^^^^^^^^ definition semanticdb maven . . minimized/TestRef#testCase().
 //                           display_name testCase

@@ -51,13 +51,29 @@ public class SemanticdbBuilders {
 
   // SemanticDB Symbols
 
+  /**
+   * Builds a SemanticDB SymbolOccurrence with the given symbol, range, role,
+   * enclosing range, and additional symbol roles bitfield.
+   *
+   * @param symbol - The SemanticDB symbol string identifying the referenced/defined element.
+   * @param range - The source range of the occurrence.
+   * @param role - The primary role (DEFINITION, REFERENCE, IMPORT, etc.).
+   * @param enclosingRange - Optional enclosing AST node range.
+   * @param symbolRoles - Bitfield for additional SCIP SymbolRoles (e.g. WriteAccess=0x4, ReadAccess=0x8).
+   * @returns The constructed SymbolOccurrence proto.
+   */
   public static Semanticdb.SymbolOccurrence symbolOccurrence(
       String symbol,
       Semanticdb.Range range,
       Semanticdb.SymbolOccurrence.Role role,
-      java.util.Optional<Semanticdb.Range> enclosingRange) {
+      java.util.Optional<Semanticdb.Range> enclosingRange,
+      int symbolRoles) {
     Semanticdb.SymbolOccurrence.Builder builder =
-        Semanticdb.SymbolOccurrence.newBuilder().setSymbol(symbol).setRange(range).setRole(role);
+        Semanticdb.SymbolOccurrence.newBuilder()
+            .setSymbol(symbol)
+            .setRange(range)
+            .setRole(role)
+            .setSymbolRoles(symbolRoles);
     enclosingRange.ifPresent(builder::setEnclosingRange);
     return builder.build();
   }

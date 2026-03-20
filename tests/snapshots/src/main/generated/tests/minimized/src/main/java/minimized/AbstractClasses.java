@@ -10,25 +10,31 @@
 //                                      display_name <init>
 //                                      signature_documentation java public AbstractClasses()
 //                                      kind Constructor
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/AbstractClasses#defaultImplementation().
     public String defaultImplementation() {
-//         ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
+//         ^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/String#
 //                ^^^^^^^^^^^^^^^^^^^^^ definition semanticdb maven . . minimized/AbstractClasses#defaultImplementation().
 //                                      display_name defaultImplementation
 //                                      signature_documentation java public String defaultImplementation()
 //                                      kind Method
+//                                      relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
       return "";
     }
+//  ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/AbstractClasses#defaultImplementation().
   
+//  ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/String#
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/AbstractClasses#abstractImplementation().
     public abstract String abstractImplementation();
-//                  ^^^^^^ reference semanticdb maven jdk 11 java/lang/String#
+//                  ^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/String#
 //                         ^^^^^^^^^^^^^^^^^^^^^^ definition semanticdb maven . . minimized/AbstractClasses#abstractImplementation().
 //                                                display_name abstractImplementation
 //                                                signature_documentation java public abstract String abstractImplementation()
 //                                                kind AbstractMethod
 //                                                relationship is_reference is_implementation semanticdb maven . . minimized/SubClasses#abstractImplementation().
+//                                                relationship is_type_definition semanticdb maven jdk 11 java/lang/String#
+//                                                 ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/String#
 //                                                 ⌃ enclosing_range_end semanticdb maven . . minimized/AbstractClasses#abstractImplementation().
   }
 //⌃ enclosing_range_end semanticdb maven . . minimized/AbstractClasses#

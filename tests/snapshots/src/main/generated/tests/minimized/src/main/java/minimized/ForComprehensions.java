@@ -1,13 +1,25 @@
   package minimized;
   
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/util/Collections#
+//       ⌄ enclosing_range_start semanticdb maven . . java/
+//       ⌄ enclosing_range_start semanticdb maven . . java/util/
   import java.util.Collections;
-//       ^^^^ reference semanticdb maven . . java/
-//            ^^^^ reference semanticdb maven . . java/util/
-//                 ^^^^^^^^^^^ reference semanticdb maven jdk 11 java/util/Collections#
+//       ^^^^ import semanticdb maven . . java/
+//            ^^^^ import semanticdb maven . . java/util/
+//                 ^^^^^^^^^^^ import semanticdb maven jdk 11 java/util/Collections#
+//               ⌃ enclosing_range_end semanticdb maven . . java/
+//                           ⌃ enclosing_range_end semanticdb maven . . java/util/
+//                            ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Collections#
+//⌄ enclosing_range_start semanticdb maven jdk 11 java/util/List#
+//       ⌄ enclosing_range_start semanticdb maven . . java/
+//       ⌄ enclosing_range_start semanticdb maven . . java/util/
   import java.util.List;
-//       ^^^^ reference semanticdb maven . . java/
-//            ^^^^ reference semanticdb maven . . java/util/
-//                 ^^^^ reference semanticdb maven jdk 11 java/util/List#
+//       ^^^^ import semanticdb maven . . java/
+//            ^^^^ import semanticdb maven . . java/util/
+//                 ^^^^ import semanticdb maven jdk 11 java/util/List#
+//               ⌃ enclosing_range_end semanticdb maven . . java/
+//                    ⌃ enclosing_range_end semanticdb maven . . java/util/
+//                     ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/List#
   
 //⌄ enclosing_range_start semanticdb maven . . minimized/ForComprehensions#
   public class ForComprehensions {
@@ -31,18 +43,29 @@
 //                              signature_documentation java int n
 //                              enclosing_symbol semanticdb maven . . minimized/ForComprehensions#app().
 //                            ⌃ enclosing_range_end local 0
+//    ⌄ enclosing_range_start semanticdb maven jdk 11 java/util/List#
+//    ⌄ enclosing_range_start semanticdb maven jdk 11 java/lang/Integer#
 //    ⌄ enclosing_range_start local 1
+//                             ⌄ enclosing_range_start semanticdb maven jdk 11 java/util/Collections#
+//                             ⌄ enclosing_range_start semanticdb maven jdk 11 java/util/Collections#singletonList().
+//                             ⌄ enclosing_range_start local 0
       List<Integer> integers = Collections.singletonList(n);
-//    ^^^^ reference semanticdb maven jdk 11 java/util/List#
-//         ^^^^^^^ reference semanticdb maven jdk 11 java/lang/Integer#
+//    ^^^^ reference read_access semanticdb maven jdk 11 java/util/List#
+//         ^^^^^^^ reference read_access semanticdb maven jdk 11 java/lang/Integer#
 //                  ^^^^^^^^ definition local 1
 //                           display_name integers
 //                           signature_documentation java List<Integer> integers
 //                           enclosing_symbol semanticdb maven . . minimized/ForComprehensions#app().
 //                           kind Variable
-//                             ^^^^^^^^^^^ reference semanticdb maven jdk 11 java/util/Collections#
-//                                         ^^^^^^^^^^^^^ reference semanticdb maven jdk 11 java/util/Collections#singletonList().
-//                                                       ^ reference local 0
+//                           relationship is_type_definition semanticdb maven jdk 11 java/util/List#
+//                             ^^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Collections#
+//                                         ^^^^^^^^^^^^^ reference read_access semanticdb maven jdk 11 java/util/Collections#singletonList().
+//                                                       ^ reference read_access local 0
+//                ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/List#
+//                ⌃ enclosing_range_end semanticdb maven jdk 11 java/lang/Integer#
+//                                                     ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Collections#
+//                                                        ⌃ enclosing_range_end semanticdb maven jdk 11 java/util/Collections#singletonList().
+//                                                        ⌃ enclosing_range_end local 0
 //                                                         ⌃ enclosing_range_end local 1
 //    ⌄ enclosing_range_start local 2
       int result = 0;
@@ -52,6 +75,7 @@
 //               enclosing_symbol semanticdb maven . . minimized/ForComprehensions#app().
 //               kind Variable
 //                  ⌃ enclosing_range_end local 2
+//    ⌄ enclosing_range_start local 1
 //         ⌄ enclosing_range_start local 3
       for (int i : integers) {
 //             ^ definition local 3
@@ -59,14 +83,21 @@
 //               signature_documentation java int i
 //               enclosing_symbol semanticdb maven . . minimized/ForComprehensions#app().
 //               kind Variable
-//                 ^^^^^^^^ reference local 1
+//                 ^^^^^^^^ reference read_access local 1
 //             ⌃ enclosing_range_end local 3
+//      ⌄ enclosing_range_start local 2
+//      ⌄ enclosing_range_start local 3
         result += i;
-//      ^^^^^^ reference local 2
-//                ^ reference local 3
+//      ^^^^^^ reference write_access read_access local 2
+//                ^ reference read_access local 3
+//                ⌃ enclosing_range_end local 2
+//                ⌃ enclosing_range_end local 3
       }
+//    ⌃ enclosing_range_end local 1
+//    ⌄ enclosing_range_start local 2
       return result;
-//           ^^^^^^ reference local 2
+//           ^^^^^^ reference read_access local 2
+//                 ⌃ enclosing_range_end local 2
     }
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/ForComprehensions#app().
   }

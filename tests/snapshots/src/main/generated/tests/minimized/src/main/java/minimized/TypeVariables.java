@@ -66,6 +66,8 @@
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#I#
   
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#CT#
+//  ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#C#
+//  ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#I#
     static class CT extends C implements I {
 //               ^^ definition semanticdb maven . . minimized/TypeVariables#CT#
 //                  display_name CT
@@ -77,8 +79,8 @@
 //                  display_name <init>
 //                  signature_documentation java CT()
 //                  kind Constructor
-//                          ^ reference semanticdb maven . . minimized/TypeVariables#C#
-//                                       ^ reference semanticdb maven . . minimized/TypeVariables#I#
+//                          ^ reference read_access semanticdb maven . . minimized/TypeVariables#C#
+//                                       ^ reference read_access semanticdb maven . . minimized/TypeVariables#I#
 //    ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#CT#mI().
       public void mI() {}
 //                ^^ definition semanticdb maven . . minimized/TypeVariables#CT#mI().
@@ -89,39 +91,64 @@
 //                      ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#CT#mI().
     }
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#CT#
+//  ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#C#
+//  ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#I#
   
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#app().[T]
 //  ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#app().
+//                 ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#C#
+//                 ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#I#
+//                                           ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#app().[T]
 //                                           ⌄ enclosing_range_start local 0
     public static <T extends C & I> void app(T t) {
 //                 ^ definition semanticdb maven . . minimized/TypeVariables#app().[T]
 //                   display_name T
 //                   signature_documentation java T extends C & I
 //                   kind TypeParameter
-//                           ^ reference semanticdb maven . . minimized/TypeVariables#C#
-//                               ^ reference semanticdb maven . . minimized/TypeVariables#I#
+//                           ^ reference read_access semanticdb maven . . minimized/TypeVariables#C#
+//                               ^ reference read_access semanticdb maven . . minimized/TypeVariables#I#
 //                                       ^^^ definition semanticdb maven . . minimized/TypeVariables#app().
 //                                           display_name app
 //                                           signature_documentation java public static <T extends C & I> void app(T t)
 //                                           kind StaticMethod
-//                                           ^ reference semanticdb maven . . minimized/TypeVariables#app().[T]
+//                                           ^ reference read_access semanticdb maven . . minimized/TypeVariables#app().[T]
 //                                             ^ definition local 0
 //                                               display_name t
 //                                               signature_documentation java T t
 //                                               enclosing_symbol semanticdb maven . . minimized/TypeVariables#app().
+//                                               relationship is_type_definition semanticdb maven . . minimized/TypeVariables#app().[T]
+//                               ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#C#
+//                               ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#I#
+//                                             ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#app().[T]
 //                                             ⌃ enclosing_range_end local 0
+//    ⌄ enclosing_range_start local 0
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#I#mI().
       t.mI();
-//    ^ reference local 0
-//      ^^ reference semanticdb maven . . minimized/TypeVariables#I#mI().
+//    ^ reference read_access local 0
+//      ^^ reference read_access semanticdb maven . . minimized/TypeVariables#I#mI().
+//       ⌃ enclosing_range_end local 0
+//         ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#I#mI().
+//    ⌄ enclosing_range_start local 0
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#C#mCPublic().
       t.mCPublic();
-//    ^ reference local 0
-//      ^^^^^^^^ reference semanticdb maven . . minimized/TypeVariables#C#mCPublic().
+//    ^ reference read_access local 0
+//      ^^^^^^^^ reference read_access semanticdb maven . . minimized/TypeVariables#C#mCPublic().
+//             ⌃ enclosing_range_end local 0
+//               ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#C#mCPublic().
+//    ⌄ enclosing_range_start local 0
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#C#mCProtected().
       t.mCProtected();
-//    ^ reference local 0
-//      ^^^^^^^^^^^ reference semanticdb maven . . minimized/TypeVariables#C#mCProtected().
+//    ^ reference read_access local 0
+//      ^^^^^^^^^^^ reference read_access semanticdb maven . . minimized/TypeVariables#C#mCProtected().
+//                ⌃ enclosing_range_end local 0
+//                  ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#C#mCProtected().
+//    ⌄ enclosing_range_start local 0
+//    ⌄ enclosing_range_start semanticdb maven . . minimized/TypeVariables#C#mCPackage().
       t.mCPackage();
-//    ^ reference local 0
-//      ^^^^^^^^^ reference semanticdb maven . . minimized/TypeVariables#C#mCPackage().
+//    ^ reference read_access local 0
+//      ^^^^^^^^^ reference read_access semanticdb maven . . minimized/TypeVariables#C#mCPackage().
+//              ⌃ enclosing_range_end local 0
+//                ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#C#mCPackage().
     }
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#app().[T]
 //  ⌃ enclosing_range_end semanticdb maven . . minimized/TypeVariables#app().
